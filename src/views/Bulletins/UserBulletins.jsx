@@ -1,5 +1,7 @@
 import React from "react";
 
 export default function UserBulletin() {
-    return
+    return (
+        <><p>Los anuncios que has creado</p></>
+    )
 }

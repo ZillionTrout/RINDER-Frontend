@@ -1,5 +1,7 @@
 import React from "react";
 
 export default function EditBulletin() {
-    return
+    return (
+        <><p>Editar tu anuncio</p></>
+    )
 }

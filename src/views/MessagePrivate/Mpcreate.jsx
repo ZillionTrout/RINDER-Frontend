@@ -1,5 +1,7 @@
 import React from "react";
 
 export default function MpCreate() {
-    return
+    return (
+        <><p>Formulario par enviar un mensaje privado</p></>
+    )
 }

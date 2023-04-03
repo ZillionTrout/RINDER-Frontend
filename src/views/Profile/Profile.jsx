@@ -1,5 +1,7 @@
 import React from "react";
 
 export default function Profile() {
-    return
+    return (
+        <div>Holi, soy el perfil :D</div>
+    )
 }
