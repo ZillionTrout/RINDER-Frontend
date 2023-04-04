@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Home from './views/Home';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import ErrorPage from './views/ErrorPage';
 import NotFound from './views/NotFound';
 import Signup from './views/auth/Signup';
@@ -22,7 +23,6 @@ import EditProfile from './views/Profile/EditProfile';
 import OtherProfile from './views/Profile/OtherProfile';
 import MasterPlayer from './views/Search/MasterPLayer';
 import SearchCampaign from './views/Search/SearchCampaign';
-import Searchname from './views/Search/Searchname';
 import Tutorial from './views/Tutorial/Tutorial';
 
 function App() {
@@ -47,12 +47,12 @@ function App() {
         <Route path="/userbulletins" element={<UserBulletins />} />
         <Route path="/mpcreate" element={<Mpcreate />} />
         <Route path="/yoursmp" element={<Yoursmp />}/>
-        <Route path="/searchname" element={<Searchname />} />
         <Route path="/searchcampaign" element={<SearchCampaign />} />
         <Route path="/masterplayer" element={<MasterPlayer />} />
         <Route path="/error" element={<ErrorPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

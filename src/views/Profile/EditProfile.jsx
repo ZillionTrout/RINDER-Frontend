@@ -2,7 +2,7 @@ import React from "react";
 
 export default function EditProfile() {
     return (
-        <div class="holis">
+        <div className="holis">
             <form>
             <input type="text" name="city" placeholder="¿En que ciudad vives?"></input>
             <input type="text" name="roling" placeholder="¿Desde cuando juegas a rol?"></input>
