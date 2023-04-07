@@ -32,9 +32,8 @@ export default function SearchName() {
     setSearchTerm(event.target.value);
     };
     return (
-    <div>
+    <div className="searchname">
         <form onSubmit={handleSearch}>
-            <label htmlFor="searchTerm">Elige tu juego</label>
             <input type="text" id="searchTerm" value={searchTerm} onChange={handleChange}/>
             <button className="profile-button"onClick={() => {getOtherProfile()}}>Search </button>
         </form>

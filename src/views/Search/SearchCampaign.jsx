@@ -3,7 +3,7 @@ import React from "react";
 export default function SearchCampaign() {
     return (
         <>
-        <form action="/search" method="POST">
+        <form action="/bulletins">
             <label>Elige campaña</label>
             <select className="select" name="Campaign" multiple required>
                 <option value="Descenso a Averno">Descenso a Averno</option>
@@ -11,7 +11,7 @@ export default function SearchCampaign() {
                 <option value="other">Other</option>
             </select>
             <div className="button-form-container">
-                <button type="submit">Join us</button>
+                <button button className="profile-button" type="submit">Join us</button>
             </div>
         </form></>
     )

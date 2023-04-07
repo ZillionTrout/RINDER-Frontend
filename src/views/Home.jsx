@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import Searchname from '../components/Searchname';
+import SearchGame from '../components/SearchGame';
+// import SearchCampaign from './Search/SearchCampaign';
 
 export default function Home() {
     const { isLoggedIn, user } = useContext(AuthContext); 
@@ -11,16 +13,21 @@ export default function Home() {
     {!isLoggedIn && <li><NavLink to="/signup">Sign up</NavLink></li>}
     {!isLoggedIn && <li><NavLink to="/login">Login</NavLink></li>}
     {isLoggedIn && user && <p>Hello {user.username}</p> }
-    {/* {isLoggedIn &&<h1>¿A que quieres jugar?</h1> }
-    {isLoggedIn &&<button>Dungeons&Dragons 5e</button>}
+
+    {/* {isLoggedIn &&<button>Dungeons&Dragons 5e</button>}
     {isLoggedIn &&<button>Anima</button>}
     {isLoggedIn &&<button>Changelling</button>}
     {isLoggedIn &&<button>Vampiro: La mascarada</button>}
     {isLoggedIn &&<button>Otros</button>}
-    {isLoggedIn &&<button>Juegos customs</button>} */}
+    {isLoggedIn &&<button>Juegos customs</button>} */} 
+    {isLoggedIn &&<h1>Elige tu juego</h1> }
+    {isLoggedIn &&<SearchGame />}
     {isLoggedIn &&<Searchname />}
       {isLoggedIn &&<Link to="/newbulletin" className="createbulltin-button"><p>Crea tu anuncio</p> </Link>}
     </div>
+    
+    
+    
     // <div>
     //       {user && <p>Hello {user.username}</p> }
     //   <h1>Home</h1>

@@ -3,10 +3,10 @@
 }
 
 body {
-  background-color: rgb(131, 131, 131);
   width: 100vw;
-  margin-bottom: 100px;
+  margin-bottom: 58%;
   background-size: cover;
+  background: linear-gradient( rgb(19, 19, 19), rgb(48, 47, 47));
 }
 
 /* ------ NAVBAR ------- */
@@ -15,7 +15,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: rgb(177, 0, 0);
   padding: 16px;
 }
 
@@ -36,15 +36,16 @@ nav ul li {
   margin-bottom: 10px;
 }
 
+
 /* ------ BUTTONS ------- */
 
 .profile-button {
-  padding: 8px;
-  background: url('https://static.vecteezy.com/system/resources/thumbnails/010/218/754/small/sign-wood-watercolor-hand-paint-free-png.png');
-  background-size:cover;
+  width: 65px; 
+  height: 65px;
+  background: url('https://static.thenounproject.com/png/594777-200.png');
+  background-size: cover;
   background-position:center;
-  border-radius: 6px;
-  color: rgb(83, 24, 0);
+  color: rgb(177, 0, 0);
   border: none;
 }
 
@@ -63,13 +64,22 @@ nav ul li {
   margin-right: 8px;
 }
 
+.btn {
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 1rem;
+  cursor: pointer;
+}
+
 /* ------ FOOTER ------- */
 
 footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  color: white;
+  color: rgb(177, 0, 0);
   padding: 16px;
   position: fixed;
   bottom: 0;
@@ -80,4 +90,9 @@ footer {
 .home {
   margin: 1rem;
   
+}
+
+.searchname {
+  display: flex;
+  justify-content: center;
 }

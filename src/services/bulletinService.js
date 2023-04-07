@@ -5,15 +5,25 @@ class BulletinService {
         this.api = axios.create({
             baseURL: `${process.env.REACT_APP_BACKEND_URL}/bulletins`,
         });
+        this.api.interceptors.request.use(config => {
+            const storedToken = localStorage.getItem('authToken');
+            if (storedToken) {
+                config.headers = { Authorization: `Bearer ${storedToken}` };
+            }
+            return config;
+        });
     } 
 
     getBulletins() {
-        return this.api.get('/bulletins').then(({ data }) => data).catch(err => console.error(err));
+        return this.api
+        .get("/")
+        .then(({ data }) => data)
+        .catch(err => console.error(err));
     }
 
     getBulletin(id) {
         return this.api
-            .get(`/bulletin/${id}`)
+            .get(`/${id}`)
             .then(({ data }) => data)
             .catch((err) => console.error(err));
     }

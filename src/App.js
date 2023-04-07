@@ -20,7 +20,7 @@ import Mpcreate from './views/MessagePrivate/Mpcreate';
 import Yoursmp from './views/MessagePrivate/Yoursmp';
 import Profile from './views/Profile/Profile';
 import EditProfile from './views/Profile/EditProfile';
-import OtherProfile from './views/Profile/OtherProfile';
+// import OtherProfile from './views/Profile/OtherProfile';
 import MasterPlayer from './views/Search/MasterPLayer';
 import SearchCampaign from './views/Search/SearchCampaign';
 import Tutorial from './views/Tutorial/Tutorial';
@@ -38,7 +38,7 @@ function App() {
         <Route path="/tutorial" element={<Tutorial />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/editprofile" element={<EditProfile />} />
-        <Route path="/otherprofile" element={<OtherProfile />} />
+        {/* <Route path="/otherprofile" element={<OtherProfile />} /> */}
         <Route path="/bulletindetail" element={<BulletinDetail />} />
         <Route path="/editbulletin" element={<EditBulletin />} />
         <Route path="/bulletins" element={<ListBulletin />} />
