@@ -9,6 +9,17 @@ body {
   background: linear-gradient( rgb(19, 19, 19), rgb(48, 47, 47));
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* ------ NAVBAR ------- */
 
 nav {
@@ -33,7 +44,6 @@ nav ul {
 
 nav ul li {
   text-decoration: none;
-  margin-bottom: 10px;
 }
 
 
@@ -73,6 +83,40 @@ nav ul li {
   cursor: pointer;
 }
 
+.games {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.99rem;
+}
+
+.game-row {
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.game-button {
+  flex-basis: 30%;
+  margin: 10px;
+  text-decoration: none;
+  color:rgb(112, 17, 17);
+}
+
+.divcreate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.createbulltin-button {
+  flex-basis: 30%;
+  text-decoration: none;
+  color:rgb(177, 0, 0);
+  border: 1px solid red;
+  width: 150px;
+}
+
 /* ------ FOOTER ------- */
 
 footer {
@@ -89,10 +133,11 @@ footer {
 
 .home {
   margin: 1rem;
-  
+
 }
 
 .searchname {
   display: flex;
   justify-content: center;
+  margin: 0;
 }

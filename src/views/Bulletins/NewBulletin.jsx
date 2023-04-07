@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import bulletinService from '../../services/bulletinService';
 
 const NewBulletin = () => {
     const [game, setGame] = useState('');
@@ -7,9 +8,27 @@ const NewBulletin = () => {
     const [place, setPlace] = useState('');
     const [description, setDescription] = useState('');
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async(event) => {
     event.preventDefault();
-    // console.log('New Bulletin:', { game, campaign, where, place, description });
+            try {            
+                const newBulletin = {
+                game: game,
+                campaign: campaign,
+                where: where,
+                place: place,
+                description: description};
+
+            await bulletinService.createBulletin(newBulletin);
+            setGame('');
+            setCampaign('');
+            setWhere('');
+            setPlace('');
+            setDescription('');
+            alert('Anuncio creado con éxito');
+        } catch (error) {
+            console.error('Error al crear el anuncio:', error);
+            alert('Error al crear el anuncio');
+        }
     }
 
     return (

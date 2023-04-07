@@ -14,12 +14,12 @@ class ProfileService {
         });
     } 
 
-    // getProfiles() {
-    //     return this.api
-    //         .get('/')
-    //         .then(({ data }) => data)
-    //         .catch((err) => console.error(err));
-    // }
+    getProfiles() {
+        return this.api
+            .get('/')
+            .then(({ data }) => data)
+            .catch((err) => console.error(err));
+    }
 
     getProfile(id) {
         return this.api

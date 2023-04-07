@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import {Spiral as Hamburger} from 'hamburger-react'
-// import { NavLink } from 'react-router-dom';
 
 function Navbar() {
     const { isLoggedIn, logOutUser } = useContext(AuthContext); 

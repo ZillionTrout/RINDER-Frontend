@@ -23,7 +23,7 @@ export default function Signup() {
 
   useEffect(() => {
     if (password !== passwordControl) {
-      setErrorMessage("Passwords don't match")
+      setErrorMessage("Contraseña incorrecta")
     } else {
       setErrorMessage(undefined)
     }
@@ -36,7 +36,7 @@ export default function Signup() {
       navigate('/login');
     } catch (error) {
       console.error(error)
-      setErrorMessage('Unable to create user account')
+      setErrorMessage('Algo ha fallado, revisa tus datos')
     }
   }
 

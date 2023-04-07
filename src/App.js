@@ -16,13 +16,18 @@ import ListBulletin from './views/Bulletins/ListBulletin';
 import NewBulletin from './views/Bulletins/NewBulletin';
 import PointedBulletin from './views/Bulletins/PointedBulletin';
 import UserBulletins from './views/Bulletins/UserBulletins';
+import CardsDungeons from './views/Search/CardsDungeons';
+import CardVampiro from './views/Search/CardVampiro'
+import CardLobo from './views/Search/CardsLobo'
+import CardChangeling from './views/Search/CardsChangeling'
+import CardPathfinder from './views/Search/CardsPathfinder'
+import CardCustom from './views/Search/CardsCustom'
 import Mpcreate from './views/MessagePrivate/Mpcreate';
 import Yoursmp from './views/MessagePrivate/Yoursmp';
 import Profile from './views/Profile/Profile';
 import EditProfile from './views/Profile/EditProfile';
 // import OtherProfile from './views/Profile/OtherProfile';
-import MasterPlayer from './views/Search/MasterPLayer';
-import SearchCampaign from './views/Search/SearchCampaign';
+import MasterPlayer from './views/Search/CardsPathfinder';
 import Tutorial from './views/Tutorial/Tutorial';
 
 function App() {
@@ -39,6 +44,12 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/editprofile" element={<EditProfile />} />
         {/* <Route path="/otherprofile" element={<OtherProfile />} /> */}
+        <Route path='/carddungeons' element={<CardsDungeons />} />
+        <Route path='/cardvampiro' element={<CardVampiro />} />
+        <Route path='/cardlobo' element={<CardLobo />} />
+        <Route path='/cardchangeling' element={<CardChangeling />} />
+        <Route path='/cardpathfinder' element={<CardPathfinder />} />
+        <Route path='/cardcustom' element={<CardCustom/>} />
         <Route path="/bulletindetail" element={<BulletinDetail />} />
         <Route path="/editbulletin" element={<EditBulletin />} />
         <Route path="/bulletins" element={<ListBulletin />} />
@@ -47,7 +58,6 @@ function App() {
         <Route path="/userbulletins" element={<UserBulletins />} />
         <Route path="/mpcreate" element={<Mpcreate />} />
         <Route path="/yoursmp" element={<Yoursmp />}/>
-        <Route path="/searchcampaign" element={<SearchCampaign />} />
         <Route path="/masterplayer" element={<MasterPlayer />} />
         <Route path="/error" element={<ErrorPage />} />
         <Route path="*" element={<NotFound />} />
