@@ -12,22 +12,21 @@ import PrivateView from './views/PrivateView';
 import IsPrivate from './components/IsPrivate';
 import BulletinDetail from './views/Bulletins/BulletinDetail';
 import EditBulletin from './views/Bulletins/EditBulletin';
-import ListBulletin from './views/Bulletins/ListBulletin';
 import NewBulletin from './views/Bulletins/NewBulletin';
 import PointedBulletin from './views/Bulletins/PointedBulletin';
 import UserBulletins from './views/Bulletins/UserBulletins';
-import CardsDungeons from './views/Search/CardsDungeons';
-import CardVampiro from './views/Search/CardVampiro'
-import CardLobo from './views/Search/CardsLobo'
-import CardChangeling from './views/Search/CardsChangeling'
-import CardPathfinder from './views/Search/CardsPathfinder'
-import CardCustom from './views/Search/CardsCustom'
+import CardsDungeons from './views/Cards/CardsDungeons';
+import CardVampiro from './views/Cards/CardVampiro'
+import CardLobo from './views/Cards/CardsLobo'
+import CardChangeling from './views/Cards/CardsChangeling'
+import CardPathfinder from './views/Cards/CardsPathfinder'
+import CardCustom from './views/Cards/CardsCustom'
 import Mpcreate from './views/MessagePrivate/Mpcreate';
 import Yoursmp from './views/MessagePrivate/Yoursmp';
 import Profile from './views/Profile/Profile';
 import EditProfile from './views/Profile/EditProfile';
 // import OtherProfile from './views/Profile/OtherProfile';
-import MasterPlayer from './views/Search/CardsPathfinder';
+import MasterPlayer from './views/Cards/CardsPathfinder';
 import Tutorial from './views/Tutorial/Tutorial';
 
 function App() {
@@ -52,7 +51,6 @@ function App() {
         <Route path='/cardcustom' element={<CardCustom/>} />
         <Route path="/bulletindetail" element={<BulletinDetail />} />
         <Route path="/editbulletin" element={<EditBulletin />} />
-        <Route path="/bulletins" element={<ListBulletin />} />
         <Route path='/newbulletin' element={<NewBulletin />} />
         <Route path="/pointedbulletin" element={<PointedBulletin />} />
         <Route path="/userbulletins" element={<UserBulletins />} />

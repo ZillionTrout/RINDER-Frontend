@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function CardBulletin({ bulletin, handleDelete }) {
-  const { campaign, image, description, _id } = bulletin;
+  const { _id } = bulletin;
 
   const handleDeleteBulletin = () => {
     handleDelete(_id);
@@ -9,9 +9,9 @@ export default function CardBulletin({ bulletin, handleDelete }) {
 
   return (
     <div className="card">
-      <h3>{campaign}</h3>
-      <img src={image} alt={campaign} />
-      <p>{description}</p>
+      <h3>{bulletin.campaign}</h3>
+      <img src={bulletin.image} alt={bulletin.game} />
+      <p>{bulletin.Role}</p>
       <button className="btn" onClick={handleDeleteBulletin}>Borrar</button>
     </div>
   );

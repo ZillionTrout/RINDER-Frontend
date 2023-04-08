@@ -1,27 +1,21 @@
-import React from "react";
+import React, { useContext }from "react";
 import { Link } from 'react-router-dom';
-import { useAuth } from "../../hooks/useAuth";
+import { AuthContext } from '../../context/AuthContext';
 
+export default function ProfileUser() {
 
-export default function Profile() {
-    const { isLoggedIn } = useAuth();
+    const { isLoggedIn, user } = useContext(AuthContext); 
+
     return (
         <>
         {isLoggedIn &&<div>Holi, soy el perfil :D</div>}
+        {user&&  <h2>Holi {user.username}</h2>}
+        <div>
+            {user&& <p>Vivo en {user.place}</p>}
+            {user&& <p>{user.description}</p>}
+        </div>
 
         {isLoggedIn && <Link to="/editprofile"><p>Editar perfil</p> </Link>}
         {isLoggedIn && <Link to="/userbulletins"><p>Mis anuncios</p> </Link>}</>
     )
 }
-
-// import React from "react";
-// import { Link } from 'react-router-dom';
-
-// export default function Profile() {
-//     return (
-//         <>
-//         <p>Soy el perfil</p>
-//         <Link to="/editprofile"><p>Edita tu Perfil</p> </Link>
-//         </>
-//     )
-// }

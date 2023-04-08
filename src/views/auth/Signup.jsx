@@ -5,7 +5,10 @@ import authService from '../../services/authService';
 export default function Signup() {
   const [user, setUser] = useState({
     username: '',
-    email: ''
+    email: '', 
+    place: '',
+    image: '',
+    description: ''
   })
   const [password, setPassword] = useState('');
   const [passwordControl, setPasswordControl] = useState('');
@@ -32,7 +35,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await authService.signup({ username: user.username, email: user.email, password });
+      await authService.signup({ username: user.username, email: user.email, password, place: user.place, image: user.image, description: user.description });
       navigate('/login');
     } catch (error) {
       console.error(error)
@@ -54,6 +57,7 @@ export default function Signup() {
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
         <button type="submit">Register</button>
       </form>
+      <div><p>¿Ya tienes una cuenta?<a href="./Login">Entra!</a></p></div>
     </div>
   )
 }

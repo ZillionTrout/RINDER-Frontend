@@ -3,7 +3,7 @@ import axios from "axios";
 class BulletinService {
     constructor() {
         this.api = axios.create({
-            baseURL: `${process.env.REACT_APP_BACKEND_URL}/bulletins`,
+            baseURL: `${process.env.REACT_APP_BACKEND_URL}`,
         });
         this.api.interceptors.request.use(config => {
             const storedToken = localStorage.getItem('authToken');
@@ -30,7 +30,7 @@ class BulletinService {
 
     createBulletin(body) {
         return this.api
-            .post("/newbulletin", body)
+            .post("/", body)
             .then(({ data }) => data)
             .catch((err) => console.error(err));
         }

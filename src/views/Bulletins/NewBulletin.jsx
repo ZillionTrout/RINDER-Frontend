@@ -1,62 +1,67 @@
-import React, { useState } from 'react';
-import bulletinService from '../../services/bulletinService';
+import React, { useState, useContext } from 'react';
+import BulletinService from '../../services/bulletinService';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 
-const NewBulletin = () => {
-    const [game, setGame] = useState('');
-    const [campaign, setCampaign] = useState('');
-    const [where, setWhere] = useState('');
-    const [place, setPlace] = useState('');
-    const [description, setDescription] = useState('');
+export default function NewBulletin() {
+    const initialState = {
+        game: '',
+        campaign: '',
+        role: '',
+        modality: '',
+        place: '',
+        description: ''
+    }
 
-    const handleSubmit = async(event) => {
-    event.preventDefault();
-            try {            
-                const newBulletin = {
-                game: game,
-                campaign: campaign,
-                where: where,
-                place: place,
-                description: description};
+    const [newBulletin, setNewBulletin] = useState(initialState);
+    const navigate = useNavigate();
+    const { isLoggedIn } = useContext(AuthContext); 
 
-            await bulletinService.createBulletin(newBulletin);
-            setGame('');
-            setCampaign('');
-            setWhere('');
-            setPlace('');
-            setDescription('');
-            alert('Anuncio creado con éxito');
+    const handleChange = (e) => {
+        setNewBulletin(prev => {
+            return {
+                ...prev,
+                [e.target.name]: e.target.value
+            }
+        })
+    }
+
+    const handleAddBulletin = async () => {
+        try {
+            await BulletinService.createBulletin(newBulletin);
+            navigate('/')
+            console.log(newBulletin)
         } catch (error) {
-            console.error('Error al crear el anuncio:', error);
-            alert('Error al crear el anuncio');
+            console.error(error)
         }
     }
 
-    return (
-        <><p>Crea tu anuncio</p>
-        <form onSubmit={handleSubmit}>
-            <label>
-            Juego:
-            <input type="text" value={game} onChange={(event) => setGame(event.target.value)} />
-            </label>
-            <label>
-            Campaña:
-            <input type="text" value={campaign} onChange={(event) => setCampaign(event.target.value)} />
-            </label>
-            <label>
-            Donde:
-            <input type="text" value={where} onChange={(event) => setWhere(event.target.value)} />
-            </label>
-            <label>
-            Ciudad:
-            <input type="text" value={place} onChange={(event) => setPlace(event.target.value)} />
-            </label>
-            <label>
-            Descripción:
-            <textarea value={description} onChange={(event) => setDescription(event.target.value)} />
-        </label>
-        <button type="submit">Enviar</button>
-        </form> </>
-    );
-}
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        handleAddBulletin();
+        setNewBulletin(initialState)
+    }
 
-export default NewBulletin;
+    return (
+        <>
+            <div className='formnew'>
+            <h2>Crea tu anuncio</h2>
+            {isLoggedIn &&<form onSubmit={handleSubmit}>
+                    <label>Juego</label>
+                    <input type="text" name="game" value={newBulletin.game} onChange={handleChange} required />
+                    <label>Campaña</label>
+                    <input type="text" name="campaign" value={newBulletin.campaign} onChange={handleChange} required />
+                    <label>¿Eres Master o jugador?</label>
+                    <input type="text" name="role" value={newBulletin.role} onChange={handleChange} required />
+                    <label>¿Presencial u Online?</label>
+                    <input type="text" name="modality" value={newBulletin.modality} onChange={handleChange} required />
+                    <label>Ciudad</label>
+                    <input type="text" name="place" value={newBulletin.place} onChange={handleChange} required />
+                    <label>Descripción</label>
+                    <input type="text" name="description" value={newBulletin.description} onChange={handleChange} required />
+                    <button type='submit' className='btn'>Anunciate!</button>
+                </form>}
+            </div>
+        </>
+    )
+}

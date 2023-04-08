@@ -141,3 +141,11 @@ footer {
   justify-content: center;
   margin: 0;
 }
+
+.card {
+  background-color: aqua;
+}
+
+ul {
+  list-style: none;
+}

@@ -3,7 +3,7 @@ import axios from "axios";
 class ProfileService {
     constructor() {
         this.api = axios.create({
-            baseURL: `${process.env.REACT_APP_BACKEND_URL}/users`,
+            baseURL: `${process.env.REACT_APP_BACKEND_URL}/profile`,
         });
         this.api.interceptors.request.use(config => {
             const storedToken = localStorage.getItem('authToken');
@@ -42,9 +42,6 @@ class ProfileService {
         .catch((err) => console.error(err));
     }
 
-    getOtherProfile(userId) {
-        return this.api.get(`/${userId}`).then(({ data }) => data).catch((err) => console.error(err));
-    }
 }
 
 const profileService = new ProfileService();

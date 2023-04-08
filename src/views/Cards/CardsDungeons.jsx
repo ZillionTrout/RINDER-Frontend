@@ -18,8 +18,9 @@ export default function BulletinList() {
     }, [])
 
     const handleFilterMaster= () => {
-        const filteredMaster = bulletins.filter(elem => elem.role === 'Master');
+        const filteredMaster = bulletins.filter(elem => elem.Role === 'dungeonMaster');
         setBulletins(filteredMaster);
+        console.log(filteredMaster)
     }
 
     const handleFilterPlayer= () => {
