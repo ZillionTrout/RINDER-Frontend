@@ -3,7 +3,7 @@ import axios from "axios";
 class BulletinService {
     constructor() {
         this.api = axios.create({
-            baseURL: `${process.env.REACT_APP_BACKEND_URL}`,
+            baseURL: `${process.env.REACT_APP_BACKEND_URL}/bulletins`,
         });
         this.api.interceptors.request.use(config => {
             const storedToken = localStorage.getItem('authToken');
@@ -44,7 +44,7 @@ class BulletinService {
 
     deleteBulletin(id) {
         return this.api
-            .delete(`/bulletin/${id}`)
+        .delete(`/bulletin/${id}`)
         .then(({ data }) => data)
         .catch((err) => console.error(err));
     }

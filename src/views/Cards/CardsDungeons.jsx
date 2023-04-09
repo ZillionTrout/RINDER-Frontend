@@ -10,20 +10,20 @@ export default function BulletinList() {
             try {
                 const response = await BulletinService.getBulletins();
                 setBulletins(response);
-                        } catch (error) {
+                console.log(response)
+            } catch (error) {
                 console.error(error);
             }
         }
         getBulletins();
     }, [])
 
-    const handleFilterMaster= () => {
-        const filteredMaster = bulletins.filter(elem => elem.Role === 'dungeonMaster');
+    const handleFilterMaster = () => {
+        const filteredMaster = bulletins.filter(elem => elem.role === 'Master');
         setBulletins(filteredMaster);
-        console.log(filteredMaster)
     }
 
-    const handleFilterPlayer= () => {
+    const handleFilterPlayer = () => {
         const filteredPlayer = bulletins.filter(elem => elem.role === 'Player');
         setBulletins(filteredPlayer);
     }
@@ -34,20 +34,20 @@ export default function BulletinList() {
 
     return (
         <>
-        <h2>Dungeons&Dragons</h2>
+            <h2>Dungeons&Dragons</h2>
             <div className="masterplayer-button">
                 <button className="btn" onClick={handleFilterMaster}>Master</button>
                 <button className="btn" onClick={handleFilterPlayer}>Player</button>
             </div>
-        <div>
-            {bulletins.filter(bulletin => bulletin.game === "Dungeons&Dragons").map(bulletin => (
-                <CardBulletin
-                    key={bulletin.game}
-                    bulletin={bulletin}
-                    handleDelete={handleDeleteBulletin}
-                />
-            ))}
-        </div>
+            <div>
+                {bulletins.filter(bulletin => bulletin.game === "Dungeons&Dragons").map(bulletin => (
+                    <CardBulletin
+                        key={bulletin.game}
+                        bulletin={bulletin}
+                        handleDelete={handleDeleteBulletin}
+                    />
+                ))}
+            </div>
         </>
     );
 }

@@ -14,7 +14,7 @@ class SearchService {
         });
     } 
 
-    getSearchUsers(body) {
+    searchUsers(body) {
         return this.api
         .post('/', body)
         .then(({ data }) => data)

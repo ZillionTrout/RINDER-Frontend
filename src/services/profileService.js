@@ -30,14 +30,14 @@ class ProfileService {
     
     editProfile(id, body) {
         return this.api
-            .put(`/editprofile/${id}`, body)
+            .put(`/${id}`, body)
             .then(({ data }) => data)
             .catch((err) => console.error(err));
     }
 
     deleteProfile(id) {
         return this.api
-            .delete(`/profile/${id}`)
+            .delete(`/${id}`)
         .then(({ data }) => data)
         .catch((err) => console.error(err));
     }

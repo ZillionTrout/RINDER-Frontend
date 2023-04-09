@@ -46,7 +46,7 @@ export default function EditBulletin() {
 
     return (
         <>
-            {/* <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 {error && <p>Algo ha ido mal. No has podido editar tu anuncio</p>}
                     <label>¿Eres Master o jugador?</label>
                     <input type="text" name="role" value={bulletinId.role} onChange={handleChange} required />
@@ -57,7 +57,7 @@ export default function EditBulletin() {
                     <label>Descripción</label>
                     <input type="text" name="description" value={bulletinId.description} onChange={handleChange} required />
                     <button type='submit' className='btn'>Anunciate!</button>
-                </form> */}
+                </form>
         </>
     ) 
 }
