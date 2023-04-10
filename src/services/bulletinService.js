@@ -37,7 +37,7 @@ class BulletinService {
     
     editBulletin(id, body) {
         return this.api
-            .put(`/editbulletin/${id}`, body)
+            .put(`/${id}`, body)
             .then(({ data }) => data)
             .catch((err) => console.error(err));
     }

@@ -6,7 +6,7 @@ body {
   width: 100vw;
   margin-bottom: 58%;
   background-size: cover;
-  background: linear-gradient( rgb(19, 19, 19), rgb(48, 47, 47));
+  background:  rgb(128, 155, 155);
 }
 
 h1,
@@ -26,7 +26,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: rgb(177, 0, 0);
+  color: rgb(7, 97, 70);
   padding: 16px;
 }
 
@@ -50,13 +50,15 @@ nav ul li {
 /* ------ BUTTONS ------- */
 
 .profile-button {
-  width: 65px; 
-  height: 65px;
-  background: url('https://static.thenounproject.com/png/594777-200.png');
-  background-size: cover;
-  background-position:center;
-  color: rgb(177, 0, 0);
-  border: none;
+  border: 1px solid rgb(7, 97, 70);
+  width: 70px;
+  text-transform: uppercase;
+  background-color: rgb(128, 155, 155);
+  text-align: center;
+  padding: 0.5rem;;
+  color: rgb(7, 97, 70);
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .back-button {
@@ -99,22 +101,35 @@ nav ul li {
   flex-basis: 30%;
   margin: 10px;
   text-decoration: none;
-  color:rgb(112, 17, 17);
+  color:rgb(7, 97, 70);
+}
+
+p.createbulltin-button {
+  border: 1px solid rgb(7, 97, 70);
+  width: 200px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem;;
+  color: rgb(7, 97, 70);
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .divcreate {
   display: flex;
   justify-content: center;
-  align-items: center;
-  text-decoration: none;
 }
 
-.createbulltin-button {
-  flex-basis: 30%;
+.search-button {
+  border: 1px solid rgb(7, 97, 70);
+  width: 70px;
+  text-transform: uppercase;
+  background-color: rgb(128, 155, 155);
+  text-align: center;
+  padding: 0.13rem;;
+  color: rgb(7, 97, 70);
+  cursor: pointer;
   text-decoration: none;
-  color:rgb(177, 0, 0);
-  border: 1px solid red;
-  width: 150px;
 }
 
 /* ------ FOOTER ------- */
@@ -123,12 +138,13 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: rgb(177, 0, 0);
+  color: rgb(7, 97, 70);
   padding: 16px;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  background:  rgb(128, 155, 155);
 }
 
 .home {
@@ -143,9 +159,38 @@ footer {
 }
 
 .card {
-  background-color: aqua;
+  background-color: rgb(32, 37, 37); 
+  opacity: 0.8; 
+  margin: 20px;
+  padding: 3px 12px;
+  border-radius: 5px;
+}
+.card p {
+  font-size: 0.8rem;
 }
 
 ul {
   list-style: none;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 0.8rem;
+  position: relative;
+}
+
+.home h5 {
+  margin-bottom: 0.5rem;
+}
+
+.home h3 {
+  margin-top: 3rem;
+}
+
+.ul-search {
+  position: absolute;
+  top: 100%;
+  margin-bottom: 0.5rem;
 }

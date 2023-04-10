@@ -30,7 +30,7 @@ class ProfileService {
     
     editProfile(id, body) {
         return this.api
-            .put(`/${id}`, body)
+            .put(`/edit/${id}`, body)
             .then(({ data }) => data)
             .catch((err) => console.error(err));
     }

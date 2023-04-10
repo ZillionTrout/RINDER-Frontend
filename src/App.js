@@ -25,7 +25,7 @@ import Mpcreate from './views/MessagePrivate/Mpcreate';
 import Yoursmp from './views/MessagePrivate/Yoursmp';
 import Profile from './views/Profile/Profile';
 import EditProfile from './views/Profile/EditProfile';
-// import OtherProfile from './views/Profile/OtherProfile';
+import OtherProfile from './views/Profile/OtherProfile';
 import MasterPlayer from './views/Cards/CardsPathfinder';
 import Tutorial from './views/Tutorial/Tutorial';
 
@@ -42,7 +42,7 @@ function App() {
         <Route path="/tutorial" element={<Tutorial />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/editprofile" element={<EditProfile />} />
-        {/* <Route path="/otherprofile" element={<OtherProfile />} /> */}
+        <Route path="/:userId" element={<OtherProfile />} />
         <Route path='/carddungeons' element={<CardsDungeons />} />
         <Route path='/cardvampiro' element={<CardVampiro />} />
         <Route path='/cardlobo' element={<CardLobo />} />
@@ -50,7 +50,7 @@ function App() {
         <Route path='/cardpathfinder' element={<CardPathfinder />} />
         <Route path='/cardcustom' element={<CardCustom/>} />
         <Route path="/bulletindetail" element={<BulletinDetail />} />
-        <Route path="/editbulletin" element={<EditBulletin />} />
+        <Route path="/:bulletinId" element={<EditBulletin />} />
         <Route path='/newbulletin' element={<NewBulletin />} />
         <Route path="/pointedbulletin" element={<PointedBulletin />} />
         <Route path="/userbulletins" element={<UserBulletins />} />

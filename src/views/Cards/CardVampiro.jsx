@@ -41,7 +41,7 @@ export default function BulletinList() {
         <div>
             {bulletins.filter(bulletin => bulletin.game === "Vampiro").map(bulletin => (
                 <CardBulletin
-                    key={bulletin.game}
+                    key={bulletin._id}
                     bulletin={bulletin}
                     handleDelete={handleDeleteBulletin}
                 />

@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import CardBulletin from "../../components/CardBulletin";
 import BulletinService from "../../services/bulletinService";
+import { AuthContext } from '../../context/AuthContext';
 
 export default function BulletinList() {
     const [bulletins, setBulletins] = useState([]);
+    const { isLoggedIn } = useContext(AuthContext); 
 
     useEffect(() => {
         const getBulletins = async () => {
             try {
                 const response = await BulletinService.getBulletins();
                 setBulletins(response);
-                console.log(response)
             } catch (error) {
                 console.error(error);
             }
@@ -33,21 +34,21 @@ export default function BulletinList() {
     }
 
     return (
-        <>
-            <h2>Dungeons&Dragons</h2>
-            <div className="masterplayer-button">
+        <>{isLoggedIn &&
+            <h2>Dungeons&Dragons</h2>}
+            {isLoggedIn &&<div className="masterplayer-button">
                 <button className="btn" onClick={handleFilterMaster}>Master</button>
                 <button className="btn" onClick={handleFilterPlayer}>Player</button>
-            </div>
-            <div>
+            </div>}
+            {isLoggedIn &&<div>
                 {bulletins.filter(bulletin => bulletin.game === "Dungeons&Dragons").map(bulletin => (
                     <CardBulletin
-                        key={bulletin.game}
+                        key={bulletin._id}
                         bulletin={bulletin}
                         handleDelete={handleDeleteBulletin}
                     />
                 ))}
-            </div>
+            </div>}
         </>
     );
 }

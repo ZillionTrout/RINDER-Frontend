@@ -5,6 +5,7 @@ import { AuthContext } from '../../context/AuthContext';
 
 export default function NewBulletin() {
     const initialState = {
+        image: '',
         game: '',
         campaign: '',
         role: '',
@@ -47,6 +48,8 @@ export default function NewBulletin() {
             <div className='formnew'>
             <h2>Crea tu anuncio</h2>
             {isLoggedIn &&<form onSubmit={handleSubmit}>
+                <label>Pon una imagen</label>
+                    <input type="file" name="image" value={newBulletin.image} onChange={handleChange}  />
                     <label>Juego</label>
                     <input type="text" name="game" value={newBulletin.game} onChange={handleChange} required />
                     <label>Campaña</label>

@@ -12,11 +12,11 @@ export default function Home() {
         {!isLoggedIn && <li><NavLink to="/signup">Sign up</NavLink></li>}
         {!isLoggedIn && <li><NavLink to="/login">Login</NavLink></li>}
         {isLoggedIn && user && <h2>Hello {user.username}</h2> }
-        {isLoggedIn &&<h3>Encuentra a tus amigos</h3>}
+        {isLoggedIn &&<h5>Encuentra a tus amigos</h5>}
         {isLoggedIn &&<Searchname />}
         {isLoggedIn &&<h3>Elige tu juego</h3> }
         {isLoggedIn &&<SearchGame />}
-        {isLoggedIn &&<Link to="/newbulletin" className='divcreate' ><p className="createbulltin-button">Crea tu anuncio</p> </Link>}
+        {isLoggedIn &&<Link to="/newbulletin" className='divcreate'><p className="createbulltin-button">Crea tu anuncio</p> </Link>}
       </div>
   )
 }

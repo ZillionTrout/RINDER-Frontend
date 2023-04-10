@@ -5,15 +5,15 @@ import BulletinService from "../../services/bulletinService";
 export default function BulletinList() {
     const [bulletins, setBulletins] = useState([]);
 
-    useEffect(() => {
-        const getBulletins = async () => {
-            try {
-                const response = await BulletinService.getBulletins();
-                setBulletins(response);
-                        } catch (error) {
-                console.error(error);
-            }
+    const getBulletins = async() => {
+        try {
+            const response = await BulletinService.getBulletins();
+            setBulletins(response)
+        } catch (error) {
+            console.error(error)
         }
+    }
+    useEffect(() => {
         getBulletins();
     }, [])
 
@@ -27,9 +27,16 @@ export default function BulletinList() {
         setBulletins(filteredPlayer);
     }
 
-    const handleDeleteBulletin = (game) => {
-        setBulletins(bulletins.filter(bulletin => bulletin.game !== game));
-    }
+    const handleDelete = async (bulletinId) => {
+        try {
+            const deleteBulletin = await BulletinService.deleteBulletin(bulletinId);
+            console.log(deleteBulletin);
+        } catch (error) {
+            console.error(error) }
+                finally {
+                    getBulletins()
+                }
+            }
 
     return (
         <>
@@ -41,9 +48,9 @@ export default function BulletinList() {
         <div>
             {bulletins.filter(bulletin => bulletin.game === "Hombre Lobo").map(bulletin => (
                 <CardBulletin
-                    key={bulletin.game}
+                    key={bulletin._id}
                     bulletin={bulletin}
-                    handleDelete={handleDeleteBulletin}
+                    handleDelete={handleDelete}
                 />
             ))}
         </div>

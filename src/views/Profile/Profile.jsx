@@ -9,13 +9,14 @@ export default function ProfileUser() {
     return (
         <>
         {isLoggedIn &&<div>Holi, soy el perfil :D</div>}
-        {user&&  <h2>Holi {user.username}</h2>}
-        <div>
-            {user&& <p>Vivo en {user.place}</p>}
-            {user&& <p>{user.description}</p>}
-        </div>
+        {user&& <div><h2>Holi {user.username}</h2>
+            <p>Vivo en {user.place}</p>
+            <p>Soy {user.rolling}</p>
+            <p>Me gusta {user.games}</p>
+            <p>Sobre mi: {user.description}</p>
+        </div>}
 
-        {isLoggedIn && <Link to="/editprofile"><p>Editar perfil</p> </Link>}
+        {isLoggedIn && <Link to={`/edit`}><p>Editar perfil</p> </Link>}
         {isLoggedIn && <Link to="/userbulletins"><p>Mis anuncios</p> </Link>}</>
     )
 }

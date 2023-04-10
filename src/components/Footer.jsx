@@ -7,7 +7,7 @@ function Footer() {
     const { isLoggedIn } = useAuth();
   return (
     <footer>
-    {isLoggedIn &&<Link to="/tutorial">Tutorial</Link>}
+    {isLoggedIn &&<Link className="profile-button" to="/tutorial">Tutorial</Link>}
     <h6>Desarrollado por Estefania Egea</h6>
       <button className="profile-button" onClick={() => navigate(-1)}>Go back</button>
     </footer>

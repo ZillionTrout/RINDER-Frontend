@@ -50,6 +50,8 @@ export default function Signup() {
         <input required type="text" name="username" value={user.username} onChange={handleChange} />
         <label>Email</label>
         <input required type="email" name="email" value={user.email} onChange={handleChange} />
+        <label>place</label>
+        <input required type="text" name="place" value={user.place} onChange={handleChange} />
         <label>Password</label>
         <input required type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value) } />
         <label>Repeat the password</label>
