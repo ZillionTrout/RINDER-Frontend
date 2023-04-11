@@ -22,7 +22,7 @@ class PointedService {
         .catch(err => console.error(err));
     }
 
-    createPointed(body, id) {
+    createPointed(id, body) {
         return this.api
             .post(`/${id}`, body)
             .then(({ data }) => data)

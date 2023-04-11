@@ -25,7 +25,7 @@ export default function NewBulletin() {
                 [e.target.name]: e.target.value
             }
         })
-    }
+    };
 
     const handleAddBulletin = async () => {
         try {

@@ -2,6 +2,11 @@
   color: green;
 }
 
+nav {
+  text-decoration: none;
+
+}
+
 body {
   width: 100vw;
   margin-bottom: 58%;
@@ -40,12 +45,13 @@ nav ul {
   margin: 0;
   display: flex;
   flex-direction: column;
+  color: rgb(7, 97, 70)
 }
 
-nav ul li {
+.li-nav{
   text-decoration: none;
+  color: rgb(7, 97, 70)
 }
-
 
 /* ------ BUTTONS ------- */
 

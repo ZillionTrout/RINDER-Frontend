@@ -10,10 +10,10 @@ function Navbar() {
     <nav className='navlist'><Hamburger toggled={isOpen} toggle={setOpen} />
     { isOpen &&
     <ul>
-      <li className='li-nav'>{isLoggedIn &&<Link to="/profile"><p>Perfil</p> </Link>}</li>
-      <li className='li-nav'>{isLoggedIn &&<Link to="/editprofile"><p>Edita tu Perfil</p> </Link>}</li>
-      <li className='li-nav'>{isLoggedIn &&<Link to="/yoursmp"><p>Tus mensajes</p> </Link>}</li>
-      <li className='li-nav'>{isLoggedIn && <p onClick={() => logOutUser()}>Log out</p>}</li>
+      <li className='li-nav'>{isLoggedIn &&<Link to="/profile"><p className='li-nav'>Perfil</p> </Link>}</li>
+      <li className='li-nav'>{isLoggedIn &&<Link to="/editprofile"><p className='li-nav'>Edita tu Perfil</p> </Link>}</li>
+      {/* <li className='li-nav'>{isLoggedIn &&<Link to="/yoursmp"><p className='li-nav'>Tus mensajes</p> </Link>}</li> */}
+      <li className='li-nav'>{isLoggedIn && <p className='li-nav' onClick={() => logOutUser()}>Log out</p>}</li>
       </ul>}      
       <Link to="/" className="logo">
         <img src="https://i.postimg.cc/HkP98j4H/logogreen.png" alt="Logo de la aplicación"/>

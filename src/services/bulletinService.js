@@ -21,6 +21,13 @@ class BulletinService {
         .catch(err => console.error(err));
     }
 
+    getUserBulletins(id) {
+        return this.api
+        .get(`/user/${id}`)
+        .then(({ data }) => data)
+        .catch(err => console.error(err));
+    }
+
     getBulletin(id) {
         return this.api
             .get(`/${id}`)

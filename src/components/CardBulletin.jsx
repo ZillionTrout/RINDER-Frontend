@@ -15,7 +15,7 @@ export default function CardBulletin({ bulletin, handleDelete }) {
       <p>{bulletin.role}</p>
       <p>{bulletin.place}</p>
       <p>{bulletin.description}</p>
-      <div classname="btn-card">
+      <div className="btn-card">
       <button className="btn" onClick={handleDeleteBulletin}>Borrar</button>
       <button className="btn"><Link to={`/bulletins/${_id}`}><p>Editar anuncio</p> </Link></button>
     </div></div>

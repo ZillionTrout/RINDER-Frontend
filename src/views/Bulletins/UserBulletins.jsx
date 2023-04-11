@@ -11,14 +11,15 @@ import CardsPathfinder from '../Cards/CardsPathfinder'
 
 export default function UserBulletin() {
     const { isLoggedIn } = useAuth();
-    const { bulletinId } = useParams();
+    const { bulletinId, userId } = useParams();
     const [bulletin, setBulletins] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 
+    // cambiar por bulletinsbyuser
     const getBulletins = async () => {
         try {
-            const response = await BulletinService.getBulletins(bulletinId);
+            const response = await BulletinService.getBulletins(userId);
             setLoading(false);
             setBulletins(response);
             setError(false);
@@ -30,7 +31,7 @@ export default function UserBulletin() {
     useEffect(() => {
         getBulletins();
         // eslint-disable-next-line
-    }, [bulletinId])
+    }, [userId])
 
     return (
         <>

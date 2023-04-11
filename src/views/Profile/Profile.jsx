@@ -1,6 +1,7 @@
 import React, { useContext }from "react";
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
+import UserBulletins from "../Bulletins/UserBulletins";
 
 export default function ProfileUser() {
 
@@ -15,8 +16,8 @@ export default function ProfileUser() {
             <p>Me gusta {user.games}</p>
             <p>Sobre mi: {user.description}</p>
         </div>}
+        {isLoggedIn && <Link to="/user/:userId"><p>Las partidas que organizo</p> </Link>}
+        {isLoggedIn && <Link to="/pointedbulletins"><p>Las partidas en las que estoy apuntado</p> </Link>}</>
 
-        {isLoggedIn && <Link to={`/edit`}><p>Editar perfil</p> </Link>}
-        {isLoggedIn && <Link to="/userbulletins"><p>Mis anuncios</p> </Link>}</>
     )
 }

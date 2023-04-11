@@ -53,7 +53,7 @@ function App() {
         <Route path="/:bulletinId" element={<EditBulletin />} />
         <Route path='/newbulletin' element={<NewBulletin />} />
         <Route path="/pointedbulletin" element={<PointedBulletin />} />
-        <Route path="/userbulletins" element={<UserBulletins />} />
+        <Route path="/user/:userId" element={<UserBulletins />} />
         <Route path="/mpcreate" element={<Mpcreate />} />
         <Route path="/yoursmp" element={<Yoursmp />}/>
         <Route path="/masterplayer" element={<MasterPlayer />} />
