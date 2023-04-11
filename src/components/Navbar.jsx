@@ -16,7 +16,7 @@ function Navbar() {
       <li className='li-nav'>{isLoggedIn && <p onClick={() => logOutUser()}>Log out</p>}</li>
       </ul>}      
       <Link to="/" className="logo">
-        <img src="https://i.postimg.cc/SRMs5RQD/logorinder1.png" alt="Logo de la aplicación"/>
+        <img src="https://i.postimg.cc/HkP98j4H/logogreen.png" alt="Logo de la aplicación"/>
       </Link>
     </nav>
   );

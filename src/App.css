@@ -50,6 +50,7 @@ nav ul li {
 /* ------ BUTTONS ------- */
 
 .profile-button {
+  font-family: 'Roboto', sans-serif;
   border: 1px solid rgb(7, 97, 70);
   width: 70px;
   text-transform: uppercase;
@@ -76,13 +77,24 @@ nav ul li {
   margin-right: 8px;
 }
 
+div button.btn p {
+  text-decoration: none;
+  margin: 0px;
+  text-decoration: none;
+  color: rgb(128, 155, 155);
+}
+
 .btn {
   font-family: 'Roboto', sans-serif;
   border: none;
-  background-color: transparent;
-  padding: 0;
+  background-color: rgb(7, 97, 70);
+  opacity: 30%;
+  padding: 0.3rem;
   margin: 1rem;
   cursor: pointer;
+  border: 1px solid rgb(7, 97, 70);
+  color: rgb(175, 197, 197);
+  text-decoration: none;
 }
 
 .games {
@@ -121,6 +133,7 @@ p.createbulltin-button {
 }
 
 .search-button {
+  font-family: 'Roboto', sans-serif;
   border: 1px solid rgb(7, 97, 70);
   width: 70px;
   text-transform: uppercase;
