@@ -13,6 +13,60 @@ h6 {
   align-items: center;
 }
 
+/* ----- LOGIN & SIGNUP ----- */
+
+.ul-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(7, 97, 70);
+  padding: 1rem;
+}
+
+.ul-login li {
+  border: 1px solid rgb(7, 97, 70);
+  width: 150px;
+  list-style: none;
+  margin: 10px; 
+  text-align: center;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.ul-login li a {
+  text-decoration: none;
+  color: rgb(7, 97, 70);
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+.signupdiv {
+  display: flex;
+  justify-content: center;
+}
+
+.signupbtn {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(7, 97, 70);
+  border: 1px solid rgb(7, 97, 70);
+  padding: 0.4rem;
+}
+
+/*---- HOME ---- */
+
+.home {
+  margin: 1rem;
+}
+
+.home h5 {
+  margin-bottom: 0.5rem;
+}
+
+.home h3 {
+  margin-top: 2rem;
+}
+
 /* ------ NAVBAR ------- */
 
 nav {
@@ -45,6 +99,13 @@ nav ul li a {
 }
 
 /* ------ BUTTONS ------- */
+
+.game-button img {
+  flex: 0 0 calc(33.33% - 10px);
+  margin: 5px;
+  border: 1px solid rgb(7, 97, 70);
+  width: 100px;
+}
 
 .profile-button {
   font-family: 'Roboto', sans-serif;
@@ -139,16 +200,21 @@ footer {
   background:  rgb(128, 155, 155);
 }
 
-.home {
-  margin: 1rem;
+/*----- GAMES -----*/
 
-}
-
-.searchname {
+.game-row {
   display: flex;
-  justify-content: center;
-  margin: 0;
+  flex-wrap: nowrap;
+  margin: 2px;
 }
+
+.games {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ---- CARDS ---- */
 
 .card {
   background-color: rgb(32, 37, 37); 
@@ -161,34 +227,21 @@ footer {
   font-size: 0.8rem;
 }
 
-div.search {
+.card img {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+  justify-content: center;
+}
+
+div.card img {
+  width: 312px;
+  height: 100px;
   display: flex;
   justify-content: center;
-  align-content: center;
-  margin-bottom: 0%;
-  position: relative;
-  padding: 0.3rem;
 }
 
-.search input {
-  display: flex;
-  justify-content: center;
-  padding: 0.3rem;
-}
-
-.home h5 {
-  margin-bottom: 0.5rem;
-}
-
-.home h3 {
-  margin-top: 2rem;
-}
-
-.ul-search {
-  position: absolute;
-  top: 100%;
-  margin-bottom: 0.5rem;
-}
+/* ---FORMS --- */
 
 .form-edit {
   display: flex;
@@ -231,12 +284,7 @@ div.search {
   padding: 0.3rem
 }
 
-.card img {
-  width: 100%;
-  height: 100%; 
-  object-fit: cover;
-  justify-content: center;
-}
+/*---- PROFILE EDIT ---- */
 
 .profilediv {
   display: flex;
@@ -258,58 +306,6 @@ div.search {
   margin: 0.3rem;
 }
 
-.game-button img {
-  flex: 0 0 calc(33.33% - 10px);
-  margin: 5px;
-  border: 1px solid rgb(7, 97, 70);
-  width: 100px;
-}
-
-.game-row {
-  display: flex;
-  flex-wrap: nowrap;
-  margin: 2px;
-}
-
-.games {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-}
-
-div.card img {
-  width: 312px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-}
-
-.ul-login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgb(7, 97, 70);
-  padding: 1rem;
-}
-
-.ul-login li {
-  border: 1px solid rgb(7, 97, 70);
-  width: 150px;
-  list-style: none;
-  margin: 10px; 
-  text-align: center;
-  cursor: pointer;
-  padding: 1rem;
-}
-
-.ul-login li a {
-  text-decoration: none;
-  color: rgb(7, 97, 70);
-  text-transform: uppercase;
-  padding: 1rem;
-}
-
 div.profilediv a {
   text-decoration: none;
 }
@@ -318,15 +314,31 @@ div.profilediv a div{
   padding: 1rem;
 }
 
-.signupdiv {
+/*-----SEARCH -----*/
+
+.searchname {
   display: flex;
   justify-content: center;
+  margin: 0;
 }
 
-.signupbtn {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: rgb(7, 97, 70);
-  border: 1px solid rgb(7, 97, 70);
-  padding: 0.4rem;
+.ul-search {
+  position: absolute;
+  top: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.search input {
+  display: flex;
+  justify-content: center;
+  padding: 0.3rem;
+}
+
+div.search {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 0%;
+  position: relative;
+  padding: 0.3rem;
 }
