@@ -47,9 +47,9 @@ export default function NewBulletin() {
         <>
             <div className='formnew'>
             <h2>Crea tu anuncio</h2>
-            {isLoggedIn &&<form onSubmit={handleSubmit}>
-                <label>Pon una imagen</label>
-                    <input type="file" name="image" value={newBulletin.image} onChange={handleChange}  />
+            {isLoggedIn &&<form className="form-edit" onSubmit={handleSubmit}>
+                <label>Pon una imagen. Si quieres que se vea completa debe ser de 315x100px</label>
+                    <input type="text" name="image" value={newBulletin.image} onChange={handleChange}  />
                     <label>Juego</label>
                     <input type="text" name="game" value={newBulletin.game} onChange={handleChange} required />
                     <label>Campaña</label>

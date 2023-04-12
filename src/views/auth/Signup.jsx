@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import authService from '../../services/authService';
+import { Link } from 'react-router-dom';
 
 export default function Signup() {
   const [user, setUser] = useState({
     username: '',
     email: '', 
     place: '',
-    image: '',
+    avatar: '',
     description: ''
   })
   const [password, setPassword] = useState('');
@@ -35,7 +36,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await authService.signup({ username: user.username, email: user.email, password, place: user.place, image: user.image, description: user.description });
+      await authService.signup({ username: user.username, email: user.email, password, place: user.place, avatar: user.avatar, description: user.description });
       navigate('/login');
     } catch (error) {
       console.error(error)
@@ -45,7 +46,7 @@ export default function Signup() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="form-edit" onSubmit={handleSubmit}>
         <label>Username</label>
         <input required type="text" name="username" value={user.username} onChange={handleChange} />
         <label>Email</label>
@@ -57,9 +58,9 @@ export default function Signup() {
         <label>Repeat the password</label>
         <input required type="password" name="passwordControl" value={passwordControl} onChange={(e) => setPasswordControl(e.target.value)} />
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <button type="submit">Register</button>
+        <button className="btn" type="submit">Register</button>
       </form>
-      <div><p>¿Ya tienes una cuenta?<a href="./Login">Entra!</a></p></div>
+      <div className='signupdiv'><p>¿Ya tienes una cuenta?<Link to="/login" className='signupbtn'>¡Entra!</Link></p></div>
     </div>
   )
 }

@@ -3,6 +3,7 @@ import toast from 'react-hot-toast';
 import { useAuth } from '../../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
 import authService from '../../services/authService';
+import { Link } from 'react-router-dom';
 
 export default function Login() {
   const { storeToken, authenticateUser, isLoggedIn } = useAuth(); 
@@ -30,7 +31,7 @@ export default function Login() {
         storeToken(response.authToken);
         authenticateUser();
         navigate('/');
-        toast.success('Welcome back!')
+        toast.success('¡Tira iniciativa!')
       } else {
         setErrorMessage('Unable to authenticate user')
       }
@@ -49,15 +50,15 @@ export default function Login() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="form-edit" onSubmit={handleSubmit}>
         <label>Email</label>
         <input required type="email" name="email" value={user.email} onChange={handleChange} />
         <label>Password</label>
         <input required type="password" name="password" value={user.password} onChange={handleChange} />
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <button type="submit">Log in </button>
+        <button className="btn" type="submit">Log in </button>
       </form>
-      <div><p>¿No tienes todavia una cuenta? <a href="/auth/signup">Es gratis! :D</a></p></div>
+      <div className='signupdiv'><p>¿No tienes todavia una cuenta? <Link to="/signup" className='signupbtn'>¡Es gratis! :D</Link></p></div>
     </div>
   )
 }

@@ -6,6 +6,7 @@ import { AuthContext } from '../../context/AuthContext';
 export default function ProfileEdit() {
     const { isLoggedIn, userId, user } = useContext(AuthContext); 
     const [profile, setProfile] = useState({
+        avatar: "",
         place: "",
         rolling: "",
         games: "",
@@ -58,7 +59,9 @@ export default function ProfileEdit() {
         {/* {isLoading && <div>Loading...</div>} */}
         {isLoggedIn && user && <div>
             <h2>Edita tu perfil</h2>
-            <form onSubmit={handleSubmit}>
+            <form className="form-edit" onSubmit={handleSubmit}>
+                <label>Avatar:</label>
+                <input type="text" name="avatar" value={profile.avatar} onChange={handleChange} />
                 <label>Ciudad:</label>
                 <input type="text" name="place" value={profile.place} onChange={handleChange}/>
                 <label>¿Eres Master o Jugador?</label>

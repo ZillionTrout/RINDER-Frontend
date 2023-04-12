@@ -9,9 +9,12 @@ export default function Home() {
     const { isLoggedIn, user } = useContext(AuthContext); 
     return (
       <div className='home'>
-        {!isLoggedIn && <li><NavLink to="/signup">Sign up</NavLink></li>}
-        {!isLoggedIn && <li><NavLink to="/login">Login</NavLink></li>}
-        {isLoggedIn && user && <h2>Hello {user.username}</h2> }
+        {!isLoggedIn && 
+        <ul className="ul-login">
+          <li><NavLink to="/signup">Sign up</NavLink></li>
+          <li><NavLink to="/login">Login</NavLink></li>
+        </ul>}
+        {isLoggedIn && user && <h2>Hola {user.username}</h2> }
         {isLoggedIn &&<h5>Encuentra a tus amigos</h5>}
         {isLoggedIn &&<Searchname />}
         {isLoggedIn &&<h3>Elige tu juego</h3> }

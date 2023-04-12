@@ -10,26 +10,28 @@ import CardsLobo from '../Cards/CardsLobo'
 import CardsPathfinder from '../Cards/CardsPathfinder'
 
 export default function UserBulletin() {
-    const { isLoggedIn } = useAuth();
+    const { isLoggedIn, user } = useAuth();
     const { bulletinId, userId } = useParams();
-    const [bulletin, setBulletins] = useState(null);
+    const [bulletin, setBulletins] = useState();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 
-    // cambiar por bulletinsbyuser
-    const getBulletins = async () => {
+    // NO FUNCIONA
+    const getUserBulletins = async () => {
         try {
-            const response = await BulletinService.getBulletins(userId);
+            const response = await BulletinService.getUserBulletins(userId);
+            const filteredBulletins = response.filter(bulletin => bulletin.user === user.userId); 
             setLoading(false);
-            setBulletins(response);
+            setBulletins(filteredBulletins);
+            console.log(filteredBulletins)
             setError(false);
         } catch (error) {
-            setLoading(false);
+            setLoading(true);
         }
     }
-
+    
     useEffect(() => {
-        getBulletins();
+        getUserBulletins();
         // eslint-disable-next-line
     }, [userId])
 
@@ -39,9 +41,9 @@ export default function UserBulletin() {
             {loading && <p>Loading...</p>}
     { isLoggedIn &&
             <p>Los anuncios que has creado</p>}
-            {isLoggedIn && !loading && bulletin &&  <CardsDungeons bulletin={bulletin} />}
-            {isLoggedIn && !loading && bulletin && <CardVampiro bulletin={bulletin} />}
-            {isLoggedIn && !loading && bulletin && <CardsLobo bulletin={bulletin} />}
+            {isLoggedIn && !loading && user &&  <CardsDungeons bulletin={bulletin} />}
+            {isLoggedIn && !loading && user && <CardVampiro bulletin={bulletin} />}
+            {isLoggedIn && !loading && user && <CardsLobo bulletin={bulletin} />}
             {isLoggedIn && !loading && bulletin && <CardChangeling bulletin={bulletin} />}
             {isLoggedIn && !loading && bulletin && <CardsPathfinder bulletin={bulletin} />}
             {isLoggedIn && !loading && bulletin && <CardsCustom bulletin={bulletin} />}

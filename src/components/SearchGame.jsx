@@ -9,14 +9,14 @@ export default function SearchGame() {
         <>
             <div className="games">
             {isLoggedIn &&<div className="game-row">
-                    <Link to="/carddungeons" className="game-button"><p>Dungeons&Dragons</p></Link>
-                    <Link to="/cardvampiro" className="game-button"><p>Vampiro</p></Link>
-                    <Link to="/cardchangeling" className="game-button"><p>Changeling</p></Link>
+                    <Link to="/carddungeons" className="game-button"><img src="https://i.postimg.cc/PprbKDyj/dungeon1.png" alt="dungeons&dragons" /></Link>
+                    <Link to="/cardvampiro" className="game-button"><img src="https://i.postimg.cc/PvCWnk0V/vampiro1.png" alt="vampiro" /></Link>
+                    <Link to="/cardchangeling" className="game-button"><img src="https://i.postimg.cc/PCYMqTJB/changeling1.png" alt="changeling" /></Link>
                 </div>}
                 {isLoggedIn &&<div className="game-row">
-                    <Link to="/cardlobo" className="game-button"><p>Hombre Lobo</p></Link>
-                    <Link to="/cardpathfinder" className="game-button"><p>Pathfinder</p></Link>
-                    <Link to="/cardcustom" className="game-button"><p>Custom</p></Link>
+                    <Link to="/cardlobo" className="game-button"><img src="https://i.postimg.cc/XGHfPv1y/lobo1.png" alt="lobo" /></Link>
+                    <Link to="/cardpathfinder" className="game-button"><img src="https://i.postimg.cc/XXqcCwXK/pathfinder1.png" alt="pathfinder" /></Link>
+                    <Link to="/cardcustom" className="game-button"><img src="https://i.postimg.cc/bGRHQgQg/custom1.png" alt="custom" /></Link>
                 </div>}
             </div>
         </>)

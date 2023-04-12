@@ -52,10 +52,10 @@ export default function EditBulletin() {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form className="form-edit" onSubmit={handleSubmit}>
                 {error && <p>Algo ha ido mal. No has podido editar tu anuncio</p>}
                     <label>Cambia la imagen</label>
-                    <input type="url" name="image" value={bulletin.image} onChange={handleChange}  />
+                    <input type="src" name="image" value={bulletin.image} onChange={handleChange}  />
                     <label>¿Eres Master o jugador?</label>
                     <input type="text" name="role" value={bulletin.role} onChange={handleChange}  />
                     <label>¿Presencial u Online?</label>
