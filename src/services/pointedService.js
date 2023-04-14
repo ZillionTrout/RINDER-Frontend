@@ -15,11 +15,18 @@ class PointedService {
         });
     }
 
-    getPointed() {
+    getPointedList(bulletinId) {
         return this.api
-        .get("/")
+        .get(`/list/${bulletinId}`)
         .then(({ data }) => data)
         .catch(err => console.error(err));
+    }
+
+    getPointed() {
+        return this.api
+            .get("/user")
+            .then(({ data }) => data)
+            .catch(err => console.error(err));
     }
 
     createPointed(id, body) {
@@ -31,9 +38,9 @@ class PointedService {
 
     deleteBulletin(id) {
         return this.api
-        .delete(`/delete/${id}`)
-        .then(({ data }) => data)
-        .catch((err) => console.error(err));
+            .delete(`/delete/${id}`)
+            .then(({ data }) => data)
+            .catch((err) => console.error(err));
         }
 }
 

@@ -1,43 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ProfileService from "../../services/profileService";
 
-const UserProfile = () => {
-    const [userProfile, setUserProfile] = useState(null);
-    const { userId } = useParams(); // Invocar la función para obtener el valor
+const OtherUserProfile = () => {
+    const { userId } = useParams();
+    const [otherUser, setOtherUser] = useState(null);
+
+
+    const getUser = async () => {
+    try {
+        const response = await ProfileService.getOtherUser(userId);
+            setOtherUser(response.otherUser);
+        } catch (error) {
+            console.error(error)
+        
+    }}
 
     useEffect(() => {
-        const fetchUserProfile = async () => {
-            try {
-                const user = await ProfileService.getProfile(userId);
-                if (user !== null && typeof user === 'object' && user.id) {
-                    setUserProfile(user);
-                } else {
-                    console.error("No se pudo cargar el perfil del usuario");
-                }
-            } catch (error) {
-                console.error(error);
-            }
-        };
-        fetchUserProfile();
+        getUser();
+        // eslint-disable-next-line
     }, [userId]);
 
     return (
-        <div>
-            {userProfile ? (
-                <div>
-                    <h1>Perfil del Usuario</h1>
-                    <p>Nombre de usuario: {userProfile.username}</p>
-                    <p>Nombre completo: {userProfile.name}</p>
-                    <p>Email: {userProfile.email}</p>
-                    <p>Teléfono: {userProfile.phone}</p>
-                </div>
-            ) : (
-                <p>Cargando perfil de usuario...</p>
-            )}
-        </div>
+    <>
+        {otherUser && (
+            <div className="profilediv">
+                <h1>Perfil de {otherUser.username}</h1>
+                <img src={otherUser.avatar}alt=""/>
+                <p>Es {otherUser.rolling}</p>
+                <p>Ciudad: {otherUser.place}</p>
+                <p>Sobre {otherUser.username}: {otherUser.description}</p>
+            </div>
+        )}
+    </>
     );
-};
+}
 
-export default UserProfile;
 
+export default OtherUserProfile;

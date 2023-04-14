@@ -21,8 +21,6 @@ import CardLobo from './views/Cards/CardsLobo'
 import CardChangeling from './views/Cards/CardsChangeling'
 import CardPathfinder from './views/Cards/CardsPathfinder'
 import CardCustom from './views/Cards/CardsCustom'
-import Mpcreate from './views/MessagePrivate/Mpcreate';
-import Yoursmp from './views/MessagePrivate/Yoursmp';
 import Profile from './views/Profile/Profile';
 import EditProfile from './views/Profile/EditProfile';
 import OtherProfile from './views/Profile/OtherProfile';
@@ -41,8 +39,8 @@ function App() {
         <Route path="/private" element={<IsPrivate><PrivateView /></IsPrivate>} />
         <Route path="/tutorial" element={<Tutorial />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/editprofile" element={<EditProfile />} />
-        <Route path="/:userId" element={<OtherProfile />} />
+        <Route path="/user/editprofile" element={<EditProfile />} />
+        <Route path="/other/:userId" element={<OtherProfile />} />
         <Route path='/carddungeons' element={<CardsDungeons />} />
         <Route path='/cardvampiro' element={<CardVampiro />} />
         <Route path='/cardlobo' element={<CardLobo />} />
@@ -50,12 +48,10 @@ function App() {
         <Route path='/cardpathfinder' element={<CardPathfinder />} />
         <Route path='/cardcustom' element={<CardCustom/>} />
         <Route path="/bulletindetail" element={<BulletinDetail />} />
-        <Route path="/:bulletinId" element={<EditBulletin />} />
+        <Route path="/user/:bulletinId" element={<EditBulletin />} />
         <Route path='/newbulletin' element={<NewBulletin />} />
         <Route path="/pointedbulletin" element={<PointedBulletin />} />
-        <Route path="/user/:userId" element={<UserBulletins />} />
-        <Route path="/mpcreate" element={<Mpcreate />} />
-        <Route path="/yoursmp" element={<Yoursmp />}/>
+        <Route path="/userbulletins" element={<UserBulletins />} />
         <Route path="/masterplayer" element={<MasterPlayer />} />
         <Route path="/error" element={<ErrorPage />} />
         <Route path="*" element={<NotFound />} />

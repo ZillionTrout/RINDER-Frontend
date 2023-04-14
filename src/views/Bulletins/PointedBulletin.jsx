@@ -1,9 +1,15 @@
 import React from "react";
+import { useAuth } from "../../hooks/useAuth";
 
 export default function PointedBulletin() {
+    const { isLoggedIn } = useAuth();
     return (
         <>
-            <p>Aquí van los anuncios en los que el usuario está apuntado</p>
+            { isLoggedIn &&
+                <div>
+                    <h1>EN CONSTRUCCIÓN</h1>
+                </div>
+            }
         </>
     )
 }

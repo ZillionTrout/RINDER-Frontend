@@ -4,7 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 
 export default function NewBulletin() {
+    const { isLoggedIn, user } = useContext(AuthContext);
     const initialState = {
+        username: user ? user.username : '',
+        userId: user ? user._id : '',
         image: '',
         game: '',
         campaign: '',
@@ -13,10 +16,8 @@ export default function NewBulletin() {
         place: '',
         description: ''
     }
-
     const [newBulletin, setNewBulletin] = useState(initialState);
     const navigate = useNavigate();
-    const { isLoggedIn } = useContext(AuthContext); 
 
     const handleChange = (e) => {
         setNewBulletin(prev => {
@@ -27,29 +28,28 @@ export default function NewBulletin() {
         })
     };
 
-    const handleAddBulletin = async () => {
+    const handleAddBulletin = async (bulletin) => {
         try {
-            await BulletinService.createBulletin(newBulletin);
-            navigate('/')
-            console.log(newBulletin)
+            await BulletinService.createBulletin(bulletin);
+            navigate('/');
         } catch (error) {
-            console.error(error)
+            console.error(error);
         }
-    }
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        handleAddBulletin();
-        setNewBulletin(initialState)
+        handleAddBulletin(newBulletin);
+        setNewBulletin(initialState);
     }
 
     return (
         <>
             <div className='formnew'>
-            <h2>Crea tu anuncio</h2>
-            {isLoggedIn &&<form className="form-edit" onSubmit={handleSubmit}>
-                <label>Pon una imagen. Si quieres que se vea completa debe ser de 315x100px</label>
-                    <input type="text" name="image" value={newBulletin.image} onChange={handleChange}  />
+                <h2>Crea tu anuncio</h2>
+                {isLoggedIn && <form className="form-edit" onSubmit={handleSubmit}>
+                    <label>Pon una imagen. Si quieres que se vea completa debe ser de 315x100px</label>
+                    <input type="text" name="image" value={newBulletin.image} onChange={handleChange} />
                     <label>Juego</label>
                     <input type="text" name="game" value={newBulletin.game} onChange={handleChange} required />
                     <label>Campaña</label>
@@ -68,3 +68,4 @@ export default function NewBulletin() {
         </>
     )
 }
+

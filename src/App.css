@@ -292,6 +292,7 @@ div.card img {
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
+  padding: 1rem
 }
 
 .profilediv div {
@@ -312,6 +313,11 @@ div.profilediv a {
 
 div.profilediv a div{
   padding: 1rem;
+}
+
+div.profilediv img {
+  width: 100px;
+  border-radius: 20px;
 }
 
 /*-----SEARCH -----*/

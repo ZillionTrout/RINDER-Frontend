@@ -30,7 +30,7 @@ class BulletinService {
 
     getBulletin(id) {
         return this.api
-            .get(`/${id}`)
+            .get(`user/${id}`)
             .then(({ data }) => data)
             .catch((err) => console.error(err));
     }
@@ -44,14 +44,14 @@ class BulletinService {
     
     editBulletin(id, body) {
         return this.api
-            .put(`/${id}`, body)
+            .put(`/edit/${id}`, body)
             .then(({ data }) => data)
             .catch((err) => console.error(err));
     }
 
     deleteBulletin(id) {
         return this.api
-        .delete(`/bulletin/${id}`)
+        .delete(`/${id}`)
         .then(({ data }) => data)
         .catch((err) => console.error(err));
     }

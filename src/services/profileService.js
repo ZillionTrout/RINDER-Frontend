@@ -42,6 +42,12 @@ class ProfileService {
         .catch((err) => console.error(err));
     }
 
+    getOtherUser(id) {
+        return this.api
+            .get(`/other/${id}`)
+            .then(({ data }) => data)
+            .catch(({ error }) => error);
+        }
 }
 
 const profileService = new ProfileService();

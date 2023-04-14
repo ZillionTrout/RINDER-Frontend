@@ -38,15 +38,15 @@ export default function BulletinList() {
                 <button className="btn" onClick={handleFilterMaster}>Master</button>
                 <button className="btn" onClick={handleFilterPlayer}>Player</button>
             </div>
-        <div>
-            {bulletins.filter(bulletin => bulletin.game === "Vampiro").map(bulletin => (
-                <CardBulletin
-                    key={bulletin._id}
-                    bulletin={bulletin}
-                    handleDelete={handleDeleteBulletin}
-                />
-            ))}
-        </div>
+            <div>
+                {bulletins.filter(bulletin => bulletin.game === "Vampiro").map(bulletin => (
+                    <CardBulletin
+                        key={bulletin._id}
+                        bulletin={bulletin}
+                        handleDelete={handleDeleteBulletin}
+                    />
+                ))}
+            </div>
         </>
     );
 }

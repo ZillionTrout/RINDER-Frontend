@@ -8,7 +8,7 @@ export default function SearchGame() {
     return (
         <>
             <div className="games">
-            {isLoggedIn &&<div className="game-row">
+                {isLoggedIn &&<div className="game-row">
                     <Link to="/carddungeons" className="game-button"><img src="https://i.postimg.cc/PprbKDyj/dungeon1.png" alt="dungeons&dragons" /></Link>
                     <Link to="/cardvampiro" className="game-button"><img src="https://i.postimg.cc/PvCWnk0V/vampiro1.png" alt="vampiro" /></Link>
                     <Link to="/cardchangeling" className="game-button"><img src="https://i.postimg.cc/PCYMqTJB/changeling1.png" alt="changeling" /></Link>
@@ -19,5 +19,6 @@ export default function SearchGame() {
                     <Link to="/cardcustom" className="game-button"><img src="https://i.postimg.cc/bGRHQgQg/custom1.png" alt="custom" /></Link>
                 </div>}
             </div>
-        </>)
+        </>
+    )
 }

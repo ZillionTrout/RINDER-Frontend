@@ -1,24 +1,18 @@
 import React, { useState } from "react";
 import SearchService from '../services/searchService';
 import ProfileService from "../services/profileService";
-import { useParams } from "react-router-dom";
 
 const UserSearch = () => {
     const [username, setUsername] = useState("");
     const [profiles, setProfiles] = useState([]);
     const [hasSearched, setHasSearched] = useState(false); 
-    const {id} = useParams();
 
     const searchName = { "username": username };
 
     const handleSearch = async () => {
         try {
             const data = await SearchService.searchUsers(searchName);
-            if (Array.isArray(data)) {
-                setProfiles(data);
-            } else {
-                setProfiles([data]);
-            }
+            setProfiles(data)
             setHasSearched(true);
         } catch (error) {
             console.error(error);
@@ -29,7 +23,6 @@ const UserSearch = () => {
         try {
             const user = await ProfileService.getProfile(id);
             if (user !== null && typeof user === 'object' && user.id) {
-                console.log(user);
             } else {
                 console.error("No hay ningún usuario con ese nombre");
             }
@@ -48,8 +41,8 @@ const UserSearch = () => {
             {profiles.length > 0 && (
                 <ul className="ul-search">
                     {profiles.map((user) => (
-                        <li key={id}>
-                            <a href={`/${id}`} onClick={() => handleProfileClick(user.id)}>{user.username}</a>
+                        <li key={user._id}>
+                            <a href={`/other/${user._id}`} onClick={() => handleProfileClick(user.id)}>{user.username}</a>
                         </li>
                     ))}
                 </ul>

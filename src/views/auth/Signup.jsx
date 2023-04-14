@@ -7,9 +7,6 @@ export default function Signup() {
   const [user, setUser] = useState({
     username: '',
     email: '', 
-    place: '',
-    avatar: '',
-    description: ''
   })
   const [password, setPassword] = useState('');
   const [passwordControl, setPasswordControl] = useState('');
@@ -36,7 +33,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await authService.signup({ username: user.username, email: user.email, password, place: user.place, avatar: user.avatar, description: user.description });
+      await authService.signup({ username: user.username, email: user.email, password, avatar:user.avatar });
       navigate('/login');
     } catch (error) {
       console.error(error)
@@ -51,8 +48,6 @@ export default function Signup() {
         <input required type="text" name="username" value={user.username} onChange={handleChange} />
         <label>Email</label>
         <input required type="email" name="email" value={user.email} onChange={handleChange} />
-        <label>place</label>
-        <input required type="text" name="place" value={user.place} onChange={handleChange} />
         <label>Password</label>
         <input required type="password" name="password" value={password} onChange={(e) => setPassword(e.target.value) } />
         <label>Repeat the password</label>
