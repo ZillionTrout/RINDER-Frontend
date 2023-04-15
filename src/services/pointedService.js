@@ -36,9 +36,9 @@ class PointedService {
             .catch((err) => console.error(err));
         }
 
-    deleteBulletin(id) {
+    deletePointed(id) {
         return this.api
-            .delete(`/delete/${id}`)
+            .delete(`/${id}`)
             .then(({ data }) => data)
             .catch((err) => console.error(err));
         }

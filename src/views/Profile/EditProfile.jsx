@@ -4,32 +4,26 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 
 export default function ProfileEdit() {
-    const { isLoggedIn, userId, user } = useContext(AuthContext); 
-    const [profile, setProfile] = useState({
-        avatar: user.avatar,
-        place: user.place,
-        rolling: user.rolling,
-        games: user.games,
-        description: user.description
-    });
+    const { isLoggedIn, user } = useContext(AuthContext); 
+    const [profile, setProfile] = useState({    });
     const [error, setError] = useState();
     const navigate = useNavigate();
 
     const getProfile = async () => {
         try {
-            const response = await ProfileService.getProfile(userId)
-            setProfile(response)
+            const response = await ProfileService.getProfile(user)
+            setProfile({
+                avatar: response.user.avatar,
+                place: response.user.place,
+                rolling: response.user.rolling,
+                games: response.user.description,
+                description: response.user.description
+            })
             setError(false)
         } catch (error) {
             setError(true)
         }
     }
-
-    useEffect(() => {
-        getProfile()
-    },
-    // eslint-disable-next-line
-    [userId]);
 
     const handleChange = (e) => {
         setProfile(prev => {
@@ -40,11 +34,17 @@ export default function ProfileEdit() {
         })
     };
 
+    useEffect(() => {
+        getProfile()
+    },
+    // eslint-disable-next-line
+    [user]);
+
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            await ProfileService.editProfile(userId, profile)
-            navigate(`/profile`);
+            await ProfileService.editProfile(user, profile)
+            navigate(`/`);
         } catch (error) {
             console.error(error)
         }

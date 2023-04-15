@@ -9,22 +9,24 @@ export default function CardBulletin({ bulletin }) {
   const navigate = useNavigate();
   const { isLoggedIn, user } = useContext(AuthContext);
   const [newPointed, setNewPointed] = useState(null);
-  const [pointedList, setPointedList] = useState([]); 
+  const [pointedList, setPointedList] = useState([]);
 
   useEffect(() => {
     const fetchPointedList = async (userId) => {
       try {
         const response = await pointedService.getPointedList(userId);
-        setPointedList(response.users);
+        setPointedList(response);
       } catch (error) {
         console.error(error)
       }
     }
     fetchPointedList();
-  }, [bulletin._id]);
+      // eslint-disable-next-line
+  }, [newPointed]);
 
   const handleDeleteBulletin = async () => {
-    try {
+    try {      
+      await pointedService.deletePointed(bulletin._id);
       await bulletinService.deleteBulletin(bulletin._id);
       navigate('/');
     } catch (error) {
@@ -38,6 +40,15 @@ export default function CardBulletin({ bulletin }) {
       setNewPointed({ bulletinId: bulletin._id, userId: user._id, username: user.username });
     } catch (error) {
       console.error(error);
+    }
+  }
+
+  const handleDeletePointed = async () => {
+    try {      
+      await pointedService.deletePointed(bulletin._id);
+      window.location.reload();
+    } catch (error) {
+      console.error(error)
     }
   }
   
@@ -54,9 +65,11 @@ export default function CardBulletin({ bulletin }) {
           <p>Usuarios apuntados: {pointedList ? pointedList.length : 0}</p>
           <div className="btn-card">
             <button className="btn" onClick={() => handlePointed(bulletin._id)}><p>¡Apuntate!</p></button>
-            <button className="btn"><Link to={`/user/editbulletin`}><p>Editar anuncio</p> </Link></button>
-            <button className="btn" onClick={() => handleDeleteBulletin(bulletin._id)}>Borrar</button>
-          </div>
+            <button className="btn" onClick={() => handleDeletePointed(bulletin._id)}><p>Borrarme :C</p></button></div>
+            {user && bulletin.username === user.username &&
+            <div>
+            <button className="btn"><Link to={`/bulletins/edit/${bulletin._id}`}><p>Editar anuncio</p> </Link></button>
+            <button className="btn" onClick={() => handleDeleteBulletin(bulletin._id)}>Borrar</button></div>}
         </div>
       }
     </>

@@ -30,7 +30,7 @@ class BulletinService {
 
     getBulletin(id) {
         return this.api
-            .get(`user/${id}`)
+            .get(`/${id}`)
             .then(({ data }) => data)
             .catch((err) => console.error(err));
     }

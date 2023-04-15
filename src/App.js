@@ -38,8 +38,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/private" element={<IsPrivate><PrivateView /></IsPrivate>} />
         <Route path="/tutorial" element={<Tutorial />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/user/editprofile" element={<EditProfile />} />
+        <Route path="/profile/:userId" element={<Profile />} />
+        <Route path="/profile/edit/:userId" element={<EditProfile />} />
         <Route path="/other/:userId" element={<OtherProfile />} />
         <Route path='/carddungeons' element={<CardsDungeons />} />
         <Route path='/cardvampiro' element={<CardVampiro />} />
@@ -48,7 +48,7 @@ function App() {
         <Route path='/cardpathfinder' element={<CardPathfinder />} />
         <Route path='/cardcustom' element={<CardCustom/>} />
         <Route path="/bulletindetail" element={<BulletinDetail />} />
-        <Route path="/user/:bulletinId" element={<EditBulletin />} />
+        <Route path="/bulletins/edit/:bulletinId" element={<EditBulletin />} />
         <Route path='/newbulletin' element={<NewBulletin />} />
         <Route path="/pointedbulletin" element={<PointedBulletin />} />
         <Route path="/userbulletins" element={<UserBulletins />} />

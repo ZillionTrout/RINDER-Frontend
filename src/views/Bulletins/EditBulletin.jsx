@@ -6,13 +6,7 @@ import { AuthContext } from '../../context/AuthContext';
 export default function EditBulletin() {
     const { isLoggedIn } = useContext(AuthContext);
     const { bulletinId } = useParams();
-    const [bulletinUser, setBulletinUser] = useState({
-        image: '',
-        role: '',
-        modality: '',
-        place: '',
-        description: ''
-    });
+    const [bulletinUser, setBulletinUser] = useState({});
     const [error, setError] = useState(false);
     const navigate = useNavigate();
 
@@ -33,11 +27,6 @@ export default function EditBulletin() {
         }
     }
 
-    useEffect(() => {
-        getBulletin();
-        // eslint-disable-next-line
-    }, [bulletinId]);
-
     const handleChange = (e) => {
         setBulletinUser(prev => {
             return {
@@ -47,6 +36,11 @@ export default function EditBulletin() {
         });
     }
 
+    useEffect(() => {
+        getBulletin();
+        // eslint-disable-next-line
+    }, [bulletinId]);
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -78,4 +72,3 @@ export default function EditBulletin() {
         </>
     )
 }
-

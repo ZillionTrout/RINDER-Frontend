@@ -6,7 +6,7 @@ import ProfileService from "../../services/profileService";
 export default function ProfileUser() {
 
     const { isLoggedIn } = useContext(AuthContext); 
-    const [user, setUser ] = useState([])
+    const [user, setUser ] = useState({})
     const getProfile = async () => {
         try {
             const response = await ProfileService.getProfile(user);
