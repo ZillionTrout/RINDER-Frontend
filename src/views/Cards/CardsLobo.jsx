@@ -29,7 +29,7 @@ export default function BulletinList() {
 
     const handleDelete = async (bulletinId) => {
         try {
-            const deleteBulletin = await BulletinService.deleteBulletin(bulletinId);
+            await BulletinService.deleteBulletin(bulletinId);
         } catch (error) {
             console.error(error) }
                 finally {

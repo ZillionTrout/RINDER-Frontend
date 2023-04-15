@@ -6,7 +6,7 @@ import { AuthContext } from '../../context/AuthContext';
 export default function ProfileEdit() {
     const { isLoggedIn, user } = useContext(AuthContext); 
     const [profile, setProfile] = useState({    });
-    const [error, setError] = useState();
+    const [, setError] = useState();
     const navigate = useNavigate();
 
     const getProfile = async () => {
