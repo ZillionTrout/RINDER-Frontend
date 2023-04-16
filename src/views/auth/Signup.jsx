@@ -53,7 +53,7 @@ export default function Signup() {
         <label>Repeat the password</label>
         <input required type="password" name="passwordControl" value={passwordControl} onChange={(e) => setPasswordControl(e.target.value)} />
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <button className="btn" type="submit">Register</button>
+        <button className="edit-btn" type="submit">Register</button>
       </form>
       <div className='signupdiv'><p>¿Ya tienes una cuenta?<Link to="/login" className='signupbtn'>¡Entra!</Link></p></div>
     </div>

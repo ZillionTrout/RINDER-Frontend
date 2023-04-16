@@ -45,7 +45,7 @@ export default function BulletinList() {
                 <button className="btn-modality" onClick={handleFilterPlayer}>Player</button>
             </div>
         <div>
-            {bulletins.filter(bulletin => bulletin.game === "Hombre Lobo").map(bulletin => (
+            {bulletins.filter(bulletin => bulletin.game === "Hombrelobo").map(bulletin => (
                 <CardBulletin
                     key={bulletin._id}
                     bulletin={bulletin}
