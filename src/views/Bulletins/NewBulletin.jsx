@@ -65,7 +65,7 @@ export default function NewBulletin() {
                     <label>Descripción</label>
                     <p>Recuerda poner alguna forma de contacto</p>
                     <input type="text" name="description" value={newBulletin.description} onChange={handleChange} required />
-                    <button type='submit' className='btn'>Anunciate!</button>
+                    <button type='submit' className='edit-btn'>Anunciate!</button>
                     <p>IMPORTANTE: el formulario es sensible a las mayúsculas, no te olvides de ellas</p>
                 </form>}
             </div>

@@ -67,7 +67,7 @@ export default function EditBulletin() {
                     <input type="text" name="place" value={bulletinUser.place ?? ''} onChange={handleChange} />
                     <label>Descripción</label>
                     <input type="text" name="description" value={bulletinUser.description ?? ''} onChange={handleChange} />
-                    <button type='submit' className='btn'>¡Editado!</button>
+                    <button type='submit' className='edit-btn'>¡Editado!</button>
                 </form>}
         </>
     )

@@ -156,7 +156,7 @@ div button.btn p {
   text-decoration: none;
   margin: 0px;
   text-decoration: none;
-  color: rgb(179, 179, 179);
+  color: rgb(207, 207, 207);
   opacity: none;
 }
 
@@ -202,6 +202,21 @@ p.createbulltin-button {
   color: rgb(7, 97, 70);
   cursor: pointer;
   text-decoration: none;
+}
+
+.edit-btn {
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  padding: 0.3rem;
+  margin: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(128, 155, 155);
+  border: 1px solid rgb(7, 97, 70);
+  color: rgb(7,97,70);
+  text-decoration: none;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 /* ------ FOOTER ------- */
@@ -292,6 +307,10 @@ div.card img {
   padding: 0.3rem
 }
 
+.form-edit button {
+  margin-top: 0.8rem;
+}
+
 .formnew {
   display: flex;
   flex-direction: column;
@@ -318,7 +337,7 @@ div.card img {
 
 .formnew p {
   margin:0;
-  font-size: 0.7rem;
+  font-size: 0.85rem;
 }
 
 /*---- PROFILE EDIT ---- */
