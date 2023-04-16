@@ -55,7 +55,7 @@ export default function Login() {
         <label>Password</label>
         <input required type="password" name="password" value={user.password} onChange={handleChange} />
         {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
-        <button className="btn" type="submit">Log in </button>
+        <button className="edit-btn" type="submit">Log in </button>
       </form>
       <div className='signupdiv'><p>¿No tienes todavia una cuenta? <Link to="/signup" className='signupbtn'>¡Es gratis! :D</Link></p></div>
     </div>
