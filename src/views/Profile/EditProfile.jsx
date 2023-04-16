@@ -6,7 +6,7 @@ import { AuthContext } from '../../context/AuthContext';
 export default function ProfileEdit() {
     const { isLoggedIn, user } = useContext(AuthContext); 
     const [profile, setProfile] = useState({    });
-    const [error, setError] = useState();
+    const [, setError] = useState();
     const navigate = useNavigate();
 
     const getProfile = async () => {
@@ -65,7 +65,7 @@ export default function ProfileEdit() {
                 <input type="text" name="games" value={profile.games ?? ''} onChange={handleChange}/>
                 <label>Cuéntanos sobre ti</label>
                 <input type="text" name="description" value={profile.description ?? ''} onChange={handleChange}/>
-                <button type="submit" className="btn">Editar</button>
+                <button type="submit" className="edit-btn">Editar</button>
             </form>
         </div>}
         </>
