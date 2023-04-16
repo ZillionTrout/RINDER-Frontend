@@ -64,7 +64,7 @@ h6 {
 }
 
 .home h3 {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 /* ------ NAVBAR ------- */
@@ -99,6 +99,23 @@ nav ul li a {
 }
 
 /* ------ BUTTONS ------- */
+
+.masterplayer-button {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-modality {
+  color: rgb(133, 133, 133);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+  cursor: pointer;
+  border: 1px solid rgb(7, 97, 70);
+  text-decoration: none;
+  background-color: rgb(7, 97, 70);
+  opacity: 75%;
+  text-transform: uppercase;
+}
 
 .game-button img {
   flex: 0 0 calc(33.33% - 10px);
@@ -139,20 +156,22 @@ div button.btn p {
   text-decoration: none;
   margin: 0px;
   text-decoration: none;
-  color: rgb(128, 155, 155);
+  color: rgb(179, 179, 179);
+  opacity: none;
 }
 
 .btn {
   font-family: 'Roboto', sans-serif;
   border: none;
-  background-color: rgb(7, 97, 70);
+  background-color: rgb(2, 54, 39);
   opacity: 30%;
   padding: 0.3rem;
   margin: 1rem;
   cursor: pointer;
-  border: 1px solid rgb(7, 97, 70);
-  color: rgb(175, 197, 197);
+  border: 1px solid rgb(0, 255, 179);
   text-decoration: none;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 p.createbulltin-button {
@@ -214,6 +233,19 @@ footer {
   justify-content: center;
 }
 
+.listgames  {
+  display: flex;
+  flex-direction: row; 
+}
+
+.listgames p {
+  flex: 1;
+  margin-right: 35px;
+  font-size: 0.9rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 /* ---- CARDS ---- */
 
 .card {
@@ -224,19 +256,19 @@ footer {
   border-radius: 5px;
 }
 .card p {
-  font-size: 0.8rem;
-}
-
-.card img {
-  width: 100%;
-  height: 100%; 
-  object-fit: cover;
-  justify-content: center;
+  font-size: 1rem;
 }
 
 div.card img {
-  width: 300px;
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
   height: 100px;
+  display: block; 
+  margin: 0 auto;
+}
+
+.btn-card {
   display: flex;
   justify-content: center;
 }
@@ -282,6 +314,11 @@ div.card img {
   flex-direction: column;
   justify-content: center;
   padding: 0.3rem
+}
+
+.formnew p {
+  margin:0;
+  font-size: 0.7rem;
 }
 
 /*---- PROFILE EDIT ---- */
@@ -330,8 +367,29 @@ div.profilediv img {
 
 .ul-search {
   position: absolute;
-  top: 100%;
+  top: 80%;
   margin-bottom: 0.5rem;
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.ul-search li {
+  display: block;
+}
+
+.list-search a {
+  text-decoration: none;
+  display: block;
+  justify-content: center;
+  margin-bottom: 5rem;
+  font-size: 2rem;
+  color: rgb(14, 70, 52);
+}
+
+.list-search a img {
+  width: 30px;
 }
 
 .search input {

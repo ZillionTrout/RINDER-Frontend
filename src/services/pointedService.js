@@ -22,9 +22,9 @@ class PointedService {
         .catch(err => console.error(err));
     }
 
-    getPointed() {
+    getPointed(id) {
         return this.api
-            .get("/user")
+            .get(`/user/${id}`)
             .then(({ data }) => data)
             .catch(err => console.error(err));
     }
