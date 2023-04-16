@@ -50,8 +50,8 @@ function App() {
         <Route path="/bulletindetail" element={<BulletinDetail />} />
         <Route path="/bulletins/edit/:bulletinId" element={<EditBulletin />} />
         <Route path='/newbulletin' element={<NewBulletin />} />
-        <Route path="/pointedbulletin" element={<PointedBulletin />} />
-        <Route path="/userbulletins" element={<UserBulletins />} />
+        <Route path="/pointed/user/:userId" element={<PointedBulletin />} />
+        <Route path="/bulletins/user/:userId" element={<UserBulletins />} />
         <Route path="/masterplayer" element={<MasterPlayer />} />
         <Route path="/error" element={<ErrorPage />} />
         <Route path="*" element={<NotFound />} />

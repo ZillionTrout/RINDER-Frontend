@@ -41,8 +41,8 @@ const UserSearch = () => {
             {profiles.length > 0 && (
                 <ul className="ul-search">
                     {profiles.map((user) => (
-                        <li key={user._id}>
-                            <a href={`/other/${user._id}`} onClick={() => handleProfileClick(user.id)}>{user.username}</a>
+                        <li className="list-search" key={user._id}>
+                            <a href={`/other/${user._id}`} onClick={() => handleProfileClick(user.id)}><img src="https://i.postimg.cc/NFhF5vNH/2453699-200.png" alt=""/>{user.username}</a>
                         </li>
                     ))}
                 </ul>

@@ -37,8 +37,8 @@ export default function BulletinList() {
         <>{isLoggedIn &&
             <h2>Dungeons&Dragons</h2>}
             {isLoggedIn &&<div className="masterplayer-button">
-                <button className="btn" onClick={handleFilterMaster}>Master</button>
-                <button className="btn" onClick={handleFilterPlayer}>Player</button>
+                <button className="btn-modality" onClick={handleFilterMaster}>Master</button>
+                <button className="btn-modality" onClick={handleFilterPlayer}>Player</button>
             </div>}
             {isLoggedIn &&<div>
                 {bulletins.filter(bulletin => bulletin.game === "Dungeons&Dragons").map(bulletin => (

@@ -30,8 +30,8 @@ export default function ProfileUser() {
             <p>Soy {user.rolling}</p>
             <p>Me gusta {user.games}</p>
             <p>Sobre mi: {user.description}</p>
-            <Link to="/userbulletins"><div>Las partidas que organizo </div></Link>
-            <Link to="/pointedbulletin"><div>Las partidas en las que estoy apuntado</div></Link> 
+            <Link to={`/bulletins/user/${user._id}`}><div>Las partidas que organizo </div></Link>
+            <Link to={`/pointed/user/${user._id}`}><div>Las partidas en las que estoy apuntado</div></Link> 
         </div>}</>
     )
 }

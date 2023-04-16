@@ -41,8 +41,8 @@ export default function BulletinList() {
         <>
         <h2>Hombre Lobo</h2>
             <div className="masterplayer-button">
-                <button className="btn" onClick={handleFilterMaster}>Master</button>
-                <button className="btn" onClick={handleFilterPlayer}>Player</button>
+                <button className="btn-modality" onClick={handleFilterMaster}>Master</button>
+                <button className="btn-modality" onClick={handleFilterPlayer}>Player</button>
             </div>
         <div>
             {bulletins.filter(bulletin => bulletin.game === "Hombre Lobo").map(bulletin => (
