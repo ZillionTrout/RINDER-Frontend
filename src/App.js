@@ -10,7 +10,6 @@ import Signup from './views/auth/Signup';
 import Login from './views/auth/Login';
 import PrivateView from './views/PrivateView';
 import IsPrivate from './components/IsPrivate';
-import BulletinDetail from './views/Bulletins/BulletinDetail';
 import EditBulletin from './views/Bulletins/EditBulletin';
 import NewBulletin from './views/Bulletins/NewBulletin';
 import PointedBulletin from './views/Bulletins/PointedBulletin';
@@ -24,7 +23,6 @@ import CardCustom from './views/Cards/CardsCustom'
 import Profile from './views/Profile/Profile';
 import EditProfile from './views/Profile/EditProfile';
 import OtherProfile from './views/Profile/OtherProfile';
-import MasterPlayer from './views/Cards/CardsPathfinder';
 import Tutorial from './views/Tutorial/Tutorial';
 
 function App() {
@@ -47,12 +45,10 @@ function App() {
         <Route path='/cardchangeling' element={<CardChangeling />} />
         <Route path='/cardpathfinder' element={<CardPathfinder />} />
         <Route path='/cardcustom' element={<CardCustom/>} />
-        <Route path="/bulletindetail" element={<BulletinDetail />} />
         <Route path="/bulletins/edit/:bulletinId" element={<EditBulletin />} />
-        <Route path='/newbulletin' element={<NewBulletin />} />
+        <Route path='/bulletins/new' element={<NewBulletin />} />
         <Route path="/pointed/user/:userId" element={<PointedBulletin />} />
         <Route path="/bulletins/user/:userId" element={<UserBulletins />} />
-        <Route path="/masterplayer" element={<MasterPlayer />} />
         <Route path="/error" element={<ErrorPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

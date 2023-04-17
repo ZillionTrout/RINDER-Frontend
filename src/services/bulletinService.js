@@ -37,7 +37,7 @@ class BulletinService {
 
     createBulletin(body) {
         return this.api
-            .post("/", body)
+            .post("/new", body)
             .then(({ data }) => data)
             .catch((err) => console.error(err));
         }

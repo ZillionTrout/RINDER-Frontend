@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import CardBulletin from "../../components/CardBulletin";
 import BulletinService from "../../services/bulletinService";
+import { useAuth } from "../../hooks/useAuth";
 
 export default function BulletinList() {
     const [bulletins, setBulletins] = useState([]);
+    const { isLoggedIn } = useAuth();
 
     useEffect(() => {
         const getBulletins = async () => {
@@ -32,7 +34,8 @@ export default function BulletinList() {
     }
 
     return (
-        <>
+        <> {isLoggedIn && 
+        <diV>
             <h2>Vampiro: La Mascarada</h2>
             <div className="masterplayer-button">
                 <button className="btn-modality" onClick={handleFilterMaster}>Master</button>
@@ -47,6 +50,7 @@ export default function BulletinList() {
                     />
                 ))}
             </div>
+            </diV>}
         </>
     );
 }

@@ -44,10 +44,10 @@ export default function NewBulletin() {
     }
 
     return (
-        <>
+        <>{isLoggedIn &&
             <div className='formnew'>
                 <h2>Crea tu anuncio</h2>
-                {isLoggedIn && <form className="form-edit" onSubmit={handleSubmit}>
+                <form className="form-edit" onSubmit={handleSubmit}>
                     <label>Pon una imagen</label>
                     <p>Si quieres que se vea completa debe ser de 315x100px</p>
                     <input type="text" name="image" value={newBulletin.image} onChange={handleChange} />
@@ -67,9 +67,9 @@ export default function NewBulletin() {
                     <input type="text" name="description" value={newBulletin.description} onChange={handleChange} required />
                     <button type='submit' className='edit-btn'>Anunciate!</button>
                     <p>IMPORTANTE: el formulario es sensible a las mayúsculas, no te olvides de ellas</p>
-                </form>}
+                </form>
             </div>
-        </>
+        }</>
     )
 }
 

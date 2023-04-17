@@ -15,18 +15,24 @@ class AuthService {
     });
   }
 
-  signup(body) {
-    return this.api.post('/signup', body).then(({ data }) => data);
-  }
+    signup(body) {
+      return this.api
+      .post('/signup', body)
+      .then(({ data }) => data);
+    }
 
-  login(user) {
-    return this.api.post('/login', user).then(({ data }) => data);
-  }
+    login(user) {
+      return this.api
+      .post('/login', user)
+      .then(({ data }) => data);
+    }
 
-  me() {
-    return this.api.get('/me').then((response) => response.data);
+    me() {
+      return this.api
+      .get('/me')
+      .then((response) => response.data);
+    }
   }
-}
 
 const authService = new AuthService();
 

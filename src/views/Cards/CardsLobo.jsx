@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import CardBulletin from "../../components/CardBulletin";
 import BulletinService from "../../services/bulletinService";
+import { useAuth } from "../../hooks/useAuth";
 
 export default function BulletinList() {
     const [bulletins, setBulletins] = useState([]);
+    const { isLoggedIn } = useAuth();
 
     const getBulletins = async() => {
         try {
@@ -38,21 +40,23 @@ export default function BulletinList() {
             }
 
     return (
-        <>
-        <h2>Hombre Lobo</h2>
+        <>{isLoggedIn &&
+        <div>
+            <h2>Hombre Lobo</h2>
             <div className="masterplayer-button">
                 <button className="btn-modality" onClick={handleFilterMaster}>Master</button>
                 <button className="btn-modality" onClick={handleFilterPlayer}>Player</button>
             </div>
-        <div>
-            {bulletins.filter(bulletin => bulletin.game === "Hombrelobo").map(bulletin => (
-                <CardBulletin
-                    key={bulletin._id}
-                    bulletin={bulletin}
-                    handleDelete={handleDelete}
-                />
-            ))}
+            <div>
+                {bulletins.filter(bulletin => bulletin.game === "Hombrelobo").map(bulletin => (
+                    <CardBulletin
+                        key={bulletin._id}
+                        bulletin={bulletin}
+                        handleDelete={handleDelete}
+                    />
+                ))}
+            </div>
         </div>
-        </>
+        }</>
     );
 }

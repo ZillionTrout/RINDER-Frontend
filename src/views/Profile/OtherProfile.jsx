@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ProfileService from "../../services/profileService";
+import { useAuth } from "../../hooks/useAuth";
 
 const OtherUserProfile = () => {
     const { userId } = useParams();
     const [otherUser, setOtherUser] = useState(null);
+    const { isLoggedIn } = useAuth();
 
 
     const getUser = async () => {
@@ -23,7 +25,7 @@ const OtherUserProfile = () => {
 
     return (
     <>
-        {otherUser && (
+        {isLoggedIn && otherUser && (
             <div className="profilediv">
                 <h1>Perfil de {otherUser.username}</h1>
                 <img src={otherUser.avatar}alt=""/>

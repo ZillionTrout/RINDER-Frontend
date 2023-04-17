@@ -4,12 +4,11 @@ import authService from '../services/authService';
 const AuthContext = createContext();
 
 function AuthProviderWrapper(props) {
-  // Store the variables we want to share
+
   const [user, setUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setLoading] = useState(true);
 
-  // Functions to store and delete the token received by the backend in the browser
   const storeToken = (token) => {
     localStorage.setItem('authToken', token);
   }
@@ -18,7 +17,6 @@ function AuthProviderWrapper(props) {
     localStorage.removeItem('authToken');
   }
 
-  // Function to check if the user is already authenticated and update the states, accessible from anywhere
   const authenticateUser = async () => {
     setLoading(true);
     const storedToken = localStorage.getItem('authToken');
@@ -45,7 +43,6 @@ function AuthProviderWrapper(props) {
     authenticateUser();
   }
 
-  // When the app first renders, let's see if the user's session is still active
   useEffect(() => {
     authenticateUser();
   }, []);

@@ -16,7 +16,7 @@ export default function ProfileEdit() {
                 avatar: response.user.avatar,
                 place: response.user.place,
                 rolling: response.user.rolling,
-                games: response.user.description,
+                games: response.user.games,
                 description: response.user.description
             })
             setError(false)

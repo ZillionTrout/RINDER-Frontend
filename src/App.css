@@ -153,9 +153,7 @@ nav ul li a {
 }
 
 div button.btn p {
-  text-decoration: none;
   margin: 0px;
-  text-decoration: none;
   color: rgb(207, 207, 207);
   opacity: none;
 }
@@ -286,6 +284,11 @@ div.card img {
 .btn-card {
   display: flex;
   justify-content: center;
+  text-decoration: none;
+}
+
+button.btn a {
+  text-decoration: underline;
 }
 
 /* ---FORMS --- */

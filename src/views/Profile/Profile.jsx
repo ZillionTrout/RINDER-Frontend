@@ -24,7 +24,8 @@ export default function ProfileUser() {
     return (
         <>
         {isLoggedIn &&user&& 
-        <div className="profilediv"><h2>Holi {user.username}</h2>
+        <div className="profilediv">
+            <h2>Holi {user.username}</h2>
             <img src={user.avatar} alt=""/>
             <p>Vivo en {user.place}</p>
             <p>Soy {user.rolling}</p>
