@@ -25,7 +25,7 @@ import Profile from './views/Profile/Profile';
 import EditProfile from './views/Profile/EditProfile';
 import OtherProfile from './views/Profile/OtherProfile';
 import MasterPlayer from './views/Cards/CardsPathfinder';
-import Tutorial from './views/Tutorial/Tutorial';
+import Tutorial from './views/faqs/FAQs';
 
 function App() {
   return (
