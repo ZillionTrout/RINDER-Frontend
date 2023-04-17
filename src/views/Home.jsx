@@ -19,11 +19,7 @@ export default function Home() {
         {isLoggedIn &&<Searchname />}
         {isLoggedIn &&<h3>Elige tu juego</h3> }
         {isLoggedIn &&<SearchGame />}
-<<<<<<< HEAD
         {isLoggedIn &&<Link to="/new" className='divcreate'><p className="createbulltin-button">Crea tu anuncio</p> </Link>}
-=======
-        {isLoggedIn &&<Link to="/new" className='divcreate'><p className="createbulltin-button">Crea tu anuncio</p> </Link>}
->>>>>>> views
       </div>
   )
 }
