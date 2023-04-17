@@ -35,13 +35,6 @@ class ProfileService {
             .catch((err) => console.error(err));
     }
 
-    deleteProfile(id) {
-        return this.api
-            .delete(`/${id}`)
-        .then(({ data }) => data)
-        .catch((err) => console.error(err));
-    }
-
     getOtherUser(id) {
         return this.api
             .get(`/other/${id}`)

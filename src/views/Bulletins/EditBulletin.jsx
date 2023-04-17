@@ -7,7 +7,7 @@ export default function EditBulletin() {
     const { isLoggedIn } = useContext(AuthContext);
     const { bulletinId } = useParams();
     const [bulletinUser, setBulletinUser] = useState({});
-    const [error, setError] = useState(false);
+    const [, setError] = useState(false);
     const navigate = useNavigate();
 
     const getBulletin = async () => {

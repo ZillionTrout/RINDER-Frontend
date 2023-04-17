@@ -49,7 +49,7 @@ function App() {
         <Route path='/cardcustom' element={<CardCustom/>} />
         <Route path="/bulletindetail" element={<BulletinDetail />} />
         <Route path="/bulletins/edit/:bulletinId" element={<EditBulletin />} />
-        <Route path='/newbulletin' element={<NewBulletin />} />
+        <Route path='/new' element={<NewBulletin />} />
         <Route path="/pointed/user/:userId" element={<PointedBulletin />} />
         <Route path="/bulletins/user/:userId" element={<UserBulletins />} />
         <Route path="/masterplayer" element={<MasterPlayer />} />
