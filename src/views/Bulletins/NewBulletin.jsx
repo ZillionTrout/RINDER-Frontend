@@ -43,6 +43,7 @@ export default function NewBulletin() {
         setNewBulletin(initialState);
     }
 
+
     return (
         <>{isLoggedIn &&
             <div className='formnew'>
