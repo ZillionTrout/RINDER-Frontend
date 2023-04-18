@@ -50,7 +50,7 @@ npm run start
 
 ## Useful links
 
-- [Presentation slides](https://slides.com/d/atB2mZw/live)
+- [Presentation slides](https://slides.com/estefaniaegeacalcena/deck-86220e)
 - [Backend repository](https://github.com/ZillionTrout/RINDER-Backend)
 - [Backend deploy](https://rinder.fly.dev/)
 - [Deployed app](https://rollrinder.netlify.app/)
