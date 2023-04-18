@@ -25,7 +25,7 @@ import Profile from './views/Profile/Profile';
 import EditProfile from './views/Profile/EditProfile';
 import OtherProfile from './views/Profile/OtherProfile';
 import MasterPlayer from './views/Cards/CardsPathfinder';
-import Tutorial from './views/faqs/FAQs';
+import FAQs from './views/faqs/FAQs';
 
 function App() {
   return (
@@ -37,7 +37,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/private" element={<IsPrivate><PrivateView /></IsPrivate>} />
-        <Route path="/tutorial" element={<Tutorial />} />
+        <Route path="/faqs" element={<FAQs />} />
         <Route path="/profile/:userId" element={<Profile />} />
         <Route path="/profile/edit/:userId" element={<EditProfile />} />
         <Route path="/other/:userId" element={<OtherProfile />} />

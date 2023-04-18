@@ -25,14 +25,18 @@ export default function ProfileUser() {
         <>
         {isLoggedIn &&user&& 
         <div className="profilediv">
-            <h2>Holi {user.username}</h2>
+        <div className="profile">
+            <h2>{user.username}</h2>
             <img src={user.avatar} alt=""/>
             <p>Vivo en {user.place}</p>
             <p>Soy {user.rolling}</p>
             <p>Me gusta {user.games}</p>
             <p>Sobre mi: {user.description}</p>
+        </div>
+        <div className="profilediv-btn">
             <Link to={`/bulletins/user/${user._id}`}><div>Las partidas que organizo </div></Link>
             <Link to={`/pointed/user/${user._id}`}><div>Las partidas en las que estoy apuntado</div></Link> 
+            </div>
         </div>}</>
     )
 }

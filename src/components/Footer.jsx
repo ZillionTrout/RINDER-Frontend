@@ -8,7 +8,7 @@ function Footer() {
   return (
     <footer>
       {isLoggedIn &&
-      <Link className="profile-button" to="/tutorial">Tutorial</Link>}
+      <Link className="profile-button" to="/faqs">FAQs</Link>}
       <h6>Desarrollado por Estefania Egea</h6>
       <button className="profile-button" onClick={() => navigate(-1)}>Go back</button>
     </footer>

@@ -348,35 +348,55 @@ button.btn a {
 .profilediv {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1rem;
-  padding: 1rem
 }
 
-.profilediv div {
+div.profile img {
+  width: 120px;
+  border-radius: 60px;
+  margin-left: 5.5rem;
+}
+
+.profile {
+  background-color: rgb(32, 37, 37);
+  opacity: 0.8; 
+  padding: 3px 12px;
+  border-radius: 5px;
+  margin: 3rem;
+  color: rgb(10, 124, 90);
+  border-radius: 5px;
+}
+
+.profile p {
+  margin: 1rem;
+}
+
+.profilediv-btn {
+  display: flex;  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profilediv-btn div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid rgb(7, 97, 70);
   width: 200px;
   text-transform: uppercase;
   text-align: center;
-  /* padding: 0.7rem;; */
   color: rgb(7, 97, 70);
   cursor: pointer;
-  text-decoration: none;
   margin: 0.3rem;
+  padding: 0.5rem;
 }
 
-div.profilediv a {
+div.profilediv-btn a {
   text-decoration: none;
 }
 
 div.profilediv a div{
   padding: 1rem;
-}
-
-div.profilediv img {
-  width: 100px;
-  border-radius: 50px;
 }
 
 /*-----SEARCH -----*/
@@ -427,4 +447,24 @@ div.search {
   margin-bottom: 0%;
   position: relative;
   padding: 0.3rem;
+}
+
+/* ---- FAQs ---- */
+
+.faqs {
+  padding: 3rem;
+  background-color: rgb(32, 37, 37);
+  opacity: 0.8; 
+  margin: 20px;
+  padding: 3px 12px;
+  border-radius: 5px;
+  color: rgb(10, 124, 90);
+}
+
+/* ---- IMG ---- */
+
+.construccion img {
+  width: 300px;
+  padding: 0rem 2rem 0rem 2rem;
+  margin: 0;
 }

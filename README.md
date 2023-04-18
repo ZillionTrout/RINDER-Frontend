@@ -1,11 +1,12 @@
 # RINDER
 
+![logorinder](logogreenbig.png)
+
 ## Description
 
 This application is called Rinder. This app is an ad portal to find people to play role playing games with. The user can create an account, search for friends, create ads or sign up for existing ones.
 
-> Add a picture (logo, design, actual screen, gif, etc, whichever you prefer.)
-> ![](logogreenbig.png)
+![rolling](https://gifdb.com/images/high/dice-roll-dungeons-and-dragons-animation-k2x5zaykndribsui.gif)
 
 ---
 
@@ -49,7 +50,7 @@ npm run start
 
 ## Useful links
 
-- [Presentation slides]()
+- [Presentation slides](https://slides.com/d/atB2mZw/live)
 - [Backend repository](https://github.com/ZillionTrout/RINDER-Backend)
 - [Backend deploy](https://rinder.fly.dev/)
 - [Deployed app](https://rollrinder.netlify.app/)

@@ -27,11 +27,13 @@ const OtherUserProfile = () => {
     <>
         {isLoggedIn && otherUser && (
             <div className="profilediv">
-                <h1>Perfil de {otherUser.username}</h1>
-                <img src={otherUser.avatar}alt=""/>
-                <p>Es {otherUser.rolling}</p>
-                <p>Ciudad: {otherUser.place}</p>
-                <p>Sobre {otherUser.username}: {otherUser.description}</p>
+                <div className="profile">
+                    <h1>Perfil de {otherUser.username}</h1>
+                    <img src={otherUser.avatar}alt=""/>
+                    <p>Es {otherUser.rolling}</p>
+                    <p>Ciudad: {otherUser.place}</p>
+                    <p>Sobre {otherUser.username}: {otherUser.description}</p>
+                </div>
             </div>
         )}
     </>
