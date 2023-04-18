@@ -1,6 +1,6 @@
 # RINDER
 
-![logorinder](logogreenbig.png)
+![logorinder](https://i.postimg.cc/vZhrfgMt/logogreen.png)
 
 ## Description
 
